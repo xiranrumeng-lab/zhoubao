@@ -1,0 +1,1021 @@
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>行业资讯每周重点分享 · 第 26 周</title>
+  <style>
+    :root {
+      --ink: #17211f;
+      --muted: #60716d;
+      --paper: #faf8f2;
+      --panel: #fffdf8;
+      --line: #ded8ca;
+      --green: #0c756f;
+      --green-soft: #e0f0ec;
+      --amber: #b7791f;
+      --amber-soft: #f5e7c8;
+      --blue: #2f6f98;
+      --blue-soft: #e5f1f7;
+      --red: #a94438;
+      --shadow: 0 18px 52px rgba(24, 32, 31, 0.12);
+      --radius: 8px;
+      --sans: "Aptos", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+      --serif: Georgia, "Times New Roman", "Songti SC", serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(12, 117, 111, 0.055) 1px, transparent 1px),
+        linear-gradient(rgba(12, 117, 111, 0.04) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px;
+      font-family: var(--sans);
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(12, 117, 111, 0.35);
+    }
+
+    a:hover {
+      border-bottom-color: var(--green);
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 36px 0 72px;
+    }
+
+    .quick-nav {
+      position: fixed;
+      left: 18px;
+      top: 50%;
+      z-index: 20;
+      display: grid;
+      gap: 8px;
+      width: 150px;
+      padding: 12px;
+      border: 1px solid rgba(102, 120, 115, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.46);
+      box-shadow: 0 12px 28px rgba(22, 32, 30, 0.08);
+      transform: translateY(-50%);
+      backdrop-filter: blur(12px);
+      transition: width 0.18s ease, padding 0.18s ease;
+    }
+
+    .quick-nav.collapsed {
+      width: 46px;
+      padding: 10px 8px;
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: 0 14px 32px rgba(22, 32, 30, 0.12);
+      cursor: pointer;
+    }
+
+    .quick-nav button {
+      min-height: 34px;
+      border: 1px solid rgba(12, 117, 111, 0.2);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font: 800 13px/1 var(--sans);
+      cursor: pointer;
+    }
+
+    .quick-nav.collapsed button {
+      writing-mode: vertical-rl;
+      min-height: 86px;
+      padding: 10px 6px;
+    }
+
+    .quick-nav-list {
+      display: grid;
+      gap: 4px;
+    }
+
+    .quick-nav.collapsed .quick-nav-list {
+      display: none;
+    }
+
+    .quick-nav-list a {
+      display: block;
+      padding: 7px 8px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .quick-nav-list a:hover {
+      color: var(--green);
+      background: rgba(224, 240, 236, 0.72);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 34px;
+      align-items: center;
+      min-height: 72vh;
+      padding: 20px 0 44px;
+    }
+
+    .kicker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.82);
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-family: var(--serif);
+      font-size: clamp(46px, 6.4vw, 86px);
+      line-height: 1.02;
+      font-weight: 650;
+      letter-spacing: 0;
+      text-wrap: pretty;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: #33413e;
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fffdf8;
+      font: 800 14px/1 var(--sans);
+      text-decoration: none;
+      transition: transform 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-bottom-color: var(--ink);
+    }
+
+    .button.secondary {
+      background: rgba(255, 253, 248, 0.76);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .hero-board {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .board-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .board-head strong {
+      font-size: 18px;
+    }
+
+    .week-tag {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .signal {
+      display: grid;
+      grid-template-columns: 86px 1fr 42px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(222, 216, 202, 0.78);
+    }
+
+    .signal:last-child {
+      border-bottom: 0;
+    }
+
+    .signal-name {
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: #efe9dc;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    .score {
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      text-align: right;
+    }
+
+    .section {
+      padding: 56px 0 18px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font: 800 13px/1.4 var(--mono);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.15;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.28;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      min-height: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: 0 12px 30px rgba(24, 32, 31, 0.06);
+    }
+
+    .card.compact {
+      padding: 14px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #0a514c;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .tag.amber {
+      background: var(--amber-soft);
+      color: #76500f;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 130px 1fr 92px;
+      gap: 14px;
+      align-items: start;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.86);
+    }
+
+    .event-date {
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .event p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .impact {
+      justify-self: end;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--amber-soft);
+      color: #76500f;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.72);
+    }
+
+    .filter-button {
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(12, 117, 111, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.72);
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .filter-button.active {
+      background: var(--green);
+      color: #fffdf8;
+      border-color: var(--green);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .news-card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.88);
+    }
+
+    .news-card.hidden {
+      display: none;
+    }
+
+    .news-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .insight {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .insight:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .num {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fffdf8;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .quote {
+      padding: 20px;
+      border-radius: var(--radius);
+      background: #1f2927;
+      color: #fffdf8;
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-head,
+      .grid.three,
+      .grid.two,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .quick-nav {
+        top: auto;
+        left: 12px;
+        bottom: 12px;
+        transform: none;
+      }
+
+      .quick-nav:not(.collapsed) {
+        width: min(210px, calc(100vw - 24px));
+      }
+
+      .event {
+        grid-template-columns: 1fr;
+      }
+
+      .impact {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 22px, 1180px);
+        padding-top: 20px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 13vw, 62px);
+      }
+
+      .filter-bar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .filter-button {
+        flex: 0 0 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="quick-nav" aria-label="快速导航">
+    <button class="quick-nav-toggle" type="button" aria-expanded="true">周报导航</button>
+    <div class="quick-nav-list">
+      <a href="#top">本周概览</a>
+      <a href="#summary">重点摘要</a>
+      <a href="#events">关键事件</a>
+      <a href="#signals">赛道信号</a>
+      <a href="#news">资讯卡片</a>
+      <a href="#next">下周关注</a>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <section class="hero" id="top">
+      <div>
+        <div class="kicker">
+          <span class="chip">行业资讯周报</span>
+          <span class="chip">第 26 周</span>
+          <span class="chip">AI / 音视频 / 内容生产</span>
+        </div>
+        <h1>行业资讯每周重点分享</h1>
+        <p class="lead" style="margin-top: 8px; margin-bottom: 4px; color: var(--muted); font-size: 15px; font-weight: 600;">音视频生成资源部 · 音视频之家</p>
+        <p class="lead">本周音频语音生成迎来集中爆发：字节火山引擎豆包音频生成模型 1.0 正式发布，网易有道开源 14 语种跨语音克隆，OpenAI 测试全双工语音模型 Bidi 1。视频生成（Seedance 2.5、京东 JoyAI-VL）与语音智能体同步推进，音视频内容生产进入套件化竞争。</p>
+        <div class="hero-actions">
+          <a class="button" href="#summary">查看本周重点</a>
+          <a class="button secondary" href="#news">筛选资讯卡片</a>
+        </div>
+      </div>
+
+      <aside class="hero-board" aria-label="本周信号强度">
+        <div class="board-head">
+          <strong>本周信号强度</strong>
+          <span class="week-tag">2026.06.22 - 2026.06.28</span>
+        </div>
+        <div class="signal">
+          <span class="signal-name">音频·语音</span>
+          <div class="bar"><span style="--value: 92%"></span></div>
+          <span class="score">强</span>
+        </div>
+        <div class="signal">
+          <span class="signal-name">视频生成</span>
+          <div class="bar"><span style="--value: 89%"></span></div>
+          <span class="score">强</span>
+        </div>
+        <div class="signal">
+          <span class="signal-name">工具·Agent</span>
+          <div class="bar"><span style="--value: 92%"></span></div>
+          <span class="score">强</span>
+        </div>
+        <div class="signal">
+          <span class="signal-name">模型·数据</span>
+          <div class="bar"><span style="--value: 35%"></span></div>
+          <span class="score">观察</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section" id="summary">
+      <div class="section-head">
+        <div class="eyebrow">01 / 本周摘要</div>
+        <div>
+          <h2>先给结论，再展开新闻。</h2>
+          <p class="sub">本周共整理 23 条重点资讯，聚焦音视频与语音生成赛道。三条结论说明这一周行业发生了什么变化。</p>
+        </div>
+      </div>
+
+      <div class="grid three">
+        <article class="card">
+          <div class="tag-row">
+            <span class="tag">结论 1</span>
+            <span class="tag blue">音频语音</span>
+          </div>
+          <h3>音频生成迎来「Seedance 时刻」。</h3>
+          <p class="sub">豆包音频生成 1.0 从单句合成升级为「音频导演」，可端到端生成人声、音乐、音效，最长 2 分钟并保持音色一致；有道、OpenAI、中科院同期在克隆与全双工方向密集发布。</p>
+        </article>
+        <article class="card">
+          <div class="tag-row">
+            <span class="tag">结论 2</span>
+            <span class="tag amber">竞争格局</span>
+          </div>
+          <h3>视频生成从单点生成走向交互与套件。</h3>
+          <p class="sub">Seedance 2.5 主打长度、多素材参考与视频编辑；京东 JoyAI-VL 把视频 AI 推进到「持续在场、主动开口」的流式交互，音视频能力开始组合竞争。</p>
+        </article>
+        <article class="card">
+          <div class="tag-row">
+            <span class="tag">结论 3</span>
+            <span class="tag blue">商业信号</span>
+          </div>
+          <h3>模型正加速进入真实产品入口。</h3>
+          <p class="sub">豆包专业版落地办公任务模式，音频模型计划接入剪映、即梦、番茄。能力从发布会走向创作工具与 API，是规模化的关键信号。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="events">
+      <div class="section-head">
+        <div class="eyebrow">02 / 关键事件</div>
+        <div>
+          <h2>按影响大小排列，自家与音视频优先。</h2>
+          <p class="sub">本周最值得关注的 6 条事件，点击标题可跳转原文。</p>
+        </div>
+      </div>
+
+      <div class="event-list">
+        <article class="event" data-category="audio">
+          <div class="event-date">2026.06.23 / 音频·语音</div>
+          <div>
+            <h3><a href="https://mp.weixin.qq.com/s/RqrijSb-lnU-ms-g75X85g" target="_blank" rel="noopener">豆包音频生成模型1.0发布，重新定义AI音频创作</a></h3>
+            <p>字节跳动：火山引擎发布豆包音频生成模型1.0，面向有声剧、播客、品牌音频等声音内容生产，计划接入剪映、即梦、番茄等产品。，强调从单句生成工具升级为“音频导演”，可生成更完整的有声内容。</p>
+          </div>
+          <span class="impact">高影响</span>
+        </article>
+        <article class="event" data-category="video">
+          <div class="event-date">2026.06.23 / 视频</div>
+          <div>
+            <h3><a href="https://mp.weixin.qq.com/s/Vnv68cHAWfcX2CnszWR6Qg" target="_blank" rel="noopener">Seedance 2.5即将上线</a></h3>
+            <p>字节跳动：豆包视频生成模型 Seedance 2.5 将在单段生成长度、多素材参考和视频编辑三方面升级，并计划 7 月初上线。</p>
+          </div>
+          <span class="impact">高影响</span>
+        </article>
+        <article class="event" data-category="tool">
+          <div class="event-date">2026.06.24 / 工具·Agent</div>
+          <div>
+            <h3><a href="https://mp.weixin.qq.com/s/Sb-NMXTrWFQES1EDO_Gr2g" target="_blank" rel="noopener">今天，豆包正式推出专业版</a></h3>
+            <p>字节跳动：豆包专业版上线，接入豆包 2.1 系列模型，提供办公任务模式、本地电脑和浏览器操作、应用生成、办公套件、专业技能和分层订阅套餐。</p>
+          </div>
+          <span class="impact">中高影响</span>
+        </article>
+        <article class="event" data-category="video">
+          <div class="event-date">2026.06.22 / 视频</div>
+          <div>
+            <h3><a href="https://mp.weixin.qq.com/s/qx5reRfHB7GCfq1Zl2zPFA" target="_blank" rel="noopener">刚刚，阿里HappyHorse1.1上线，我用它把国足送进世界杯</a></h3>
+            <p>阿里：阿里发布视频生成模型 HappyHorse 1.1，文章通过实测与 HappyHorse 1.0、Seedance 2.0 Mini 对比，关注运动场景和视频质量提升。</p>
+          </div>
+          <span class="impact">中高影响</span>
+        </article>
+        <article class="event" data-category="video">
+          <div class="event-date">2026.06.23 / 视频</div>
+          <div>
+            <h3><a href="https://mp.weixin.qq.com/s/xPNaxqm1rqKunmzfPAVimw" target="_blank" rel="noopener">94毫秒延迟、监控胜率100%！国产视频模型干翻Gemini</a></h3>
+            <p>京东：京东开源 JoyAI-VL-Interaction，把视频人工智能从轮次问答推进到持续在场、主动开口和按时机行动的流式交互，并获得 vLLM-Omni 支持。</p>
+          </div>
+          <span class="impact">需跟踪</span>
+        </article>
+        <article class="event" data-category="audio">
+          <div class="event-date">2026.06.22 / 音频·语音</div>
+          <div>
+            <h3><a href="https://mp.weixin.qq.com/s/peF4Qj_fKOxZ50r5pnxwIQ" target="_blank" rel="noopener">看一眼就够了！MeMo：让模型在「看不见」时，依然能「听得准」</a></h3>
+            <p>报告观点：MeMo 针对视听语音识别中视觉不可用或退化问题，用双记忆库和注意力动量增强音频识别稳定性，在长时语音场景中维持表现。</p>
+          </div>
+          <span class="impact">需跟踪</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="signals">
+      <div class="section-head">
+        <div class="eyebrow">03 / 赛道信号</div>
+        <div>
+          <h2>把资讯翻译成判断。</h2>
+          <p class="sub">同一条新闻对不同团队价值不同：研发看能力边界，产品看工作流，商务看渠道和价格。</p>
+        </div>
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <div class="insight">
+            <span class="num">01</span>
+            <div>
+              <h3>能力信号 · 音频语音</h3>
+              <p class="sub">豆包音频 1.0 支持多角色对话、情绪编排、环境音；有道 Confucius4-TTS 实现 14 语种零口音克隆；全双工（Bidi 1 / BayLing-Duplex）成为语音交互新方向。</p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="num">02</span>
+            <div>
+              <h3>产品信号 · 落地入口</h3>
+              <p class="sub">音频模型计划接入剪映、即梦、番茄；豆包专业版进入办公任务模式；关注能力是否真正进入创作工具而非停留 Demo。</p>
+            </div>
+          </div>
+          <div class="insight">
+            <span class="num">03</span>
+            <div>
+              <h3>竞争信号 · 视频与评测</h3>
+              <p class="sub">Seedance 2.5、京东 JoyAI-VL、阿里 HappyHorse 1.1 同期迭代；Artificial Analysis 语音榜单可用于模型选型对标。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="quote">
+            本周判读要点：<br>
+            1. 音频生成从「单句 TTS」进入「整段内容生产」。<br>
+            2. 全双工语音是下一个交互竞争点。<br>
+            3. 视频生成向交互性 + 可编辑演进。<br>
+            4. 关注自家音频 1.0 的产品接入与用户反馈。
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="news">
+      <div class="section-head">
+        <div class="eyebrow">04 / 资讯卡片</div>
+        <div>
+          <h2>可筛选的新闻池（23 条）。</h2>
+          <p class="sub">按赛道筛选，例会时可只看某一类，也可保留为后续检索库。</p>
+        </div>
+      </div>
+
+      <div class="filter-bar" aria-label="资讯筛选">
+        <button class="filter-button active" data-filter="all">全部</button>
+        <button class="filter-button" data-filter="audio">音频·语音</button>
+        <button class="filter-button" data-filter="video">视频</button>
+        <button class="filter-button" data-filter="tool">工具·Agent</button>
+        <button class="filter-button" data-filter="model">模型·数据</button>
+      </div>
+
+      <div class="news-grid">
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>豆包音频生成模型1.0发布，重新定义AI音频创作</h3>
+          <p>字节跳动｜火山引擎发布豆包音频生成模型1.0，面向有声剧、播客、品牌音频等声音内容生产，计划接入剪映、即梦、番茄等产品。，强调从单句生成工具升级为“音频导演”，可生成更完整的有声内容。</p>
+          <a href="https://mp.weixin.qq.com/s/RqrijSb-lnU-ms-g75X85g" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频</span><span>优先级 A</span></div>
+          <h3>Seedance 2.5即将上线</h3>
+          <p>字节跳动｜豆包视频生成模型 Seedance 2.5 将在单段生成长度、多素材参考和视频编辑三方面升级，并计划 7 月初上线。</p>
+          <a href="https://mp.weixin.qq.com/s/Vnv68cHAWfcX2CnszWR6Qg" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频</span><span>优先级 A</span></div>
+          <h3>刚刚，阿里HappyHorse1.1上线，我用它把国足送进世界杯</h3>
+          <p>阿里｜阿里发布视频生成模型 HappyHorse 1.1，文章通过实测与 HappyHorse 1.0、Seedance 2.0 Mini 对比，关注运动场景和视频质量提升。</p>
+          <a href="https://mp.weixin.qq.com/s/qx5reRfHB7GCfq1Zl2zPFA" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频</span><span>优先级 A</span></div>
+          <h3>94毫秒延迟、监控胜率100%！国产视频模型干翻Gemini</h3>
+          <p>京东｜京东开源 JoyAI-VL-Interaction，把视频人工智能从轮次问答推进到持续在场、主动开口和按时机行动的流式交互，并获得 vLLM-Omni 支持。</p>
+          <a href="https://mp.weixin.qq.com/s/xPNaxqm1rqKunmzfPAVimw" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>看一眼就够了！MeMo：让模型在「看不见」时，依然能「听得准」</h3>
+          <p>报告观点｜MeMo 针对视听语音识别中视觉不可用或退化问题，用双记忆库和注意力动量增强音频识别稳定性，在长时语音场景中维持表现。</p>
+          <a href="https://mp.weixin.qq.com/s/peF4Qj_fKOxZ50r5pnxwIQ" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>OpenAI 曝光 Bidi 1 全双工语音模型：支持边说边听双向并发</h3>
+          <p>OpenAI｜OpenAI 测试下一代 Bidi 1 音频模型，采用双向音频架构，让 ChatGPT 在说话同时保持听觉理解能力，面向全双工语音交互。</p>
+          <a href="https://mp.weixin.qq.com/s/MrBFuKzCj4r1ZLK6No9D3w" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>实时 AI 世界杯解说员</h3>
+          <p>个人研究｜文章收录实时人工智能世界杯解说员项目，展示结合比赛画面/事件与语音播报的实时内容生成玩法。 https://www.reddit.com/r/OpenAI/comments/1udx8it/i_tried_making_an_ai_worl…</p>
+          <a href="https://mp.weixin.qq.com/s/MrBFuKzCj4r1ZLK6No9D3w" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="tool">
+          <div class="news-meta"><span>工具·Agent</span><span>优先级 A</span></div>
+          <h3>今天，豆包正式推出专业版</h3>
+          <p>字节跳动｜豆包专业版上线，接入豆包 2.1 系列模型，提供办公任务模式、本地电脑和浏览器操作、应用生成、办公套件、专业技能和分层订阅套餐。</p>
+          <a href="https://mp.weixin.qq.com/s/Sb-NMXTrWFQES1EDO_Gr2g" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>论文速递之BayLing-Duplex</h3>
+          <p>中科院计算所｜BayLing-Duplex 用 4 个特殊标记和三通道交错序列，把 GLM-4-Voice 改造成全双工语音对话模型，无需外部语音活动检测即可决定何时听、说和停。</p>
+          <a href="https://mp.weixin.qq.com/s/0wGJscBVfgqlSaXoqiVRhQ" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>AI语音测评平台——Artificial_Analysis</h3>
+          <p>Artificial Analysis｜Artificial Analysis 在语音赛道提供语音识别、文本转语音和端到端语音对话三类榜单，用准确率、延迟、价格和盲测结果辅助模型选型。</p>
+          <a href="https://mp.weixin.qq.com/s/0xeJAdmx8tqqD2PCuuUwkA" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="tool">
+          <div class="news-meta"><span>工具·Agent</span><span>优先级 B</span></div>
+          <h3>只需演示一次即可无限重复，OpenAI Codex 解锁“录制与回放”新技能</h3>
+          <p>OpenAI｜OpenAI为macOS平台的Codex应用推出“录制与回放”功能，使用户通过一次性工作流程演示（如上传含元数据的YouTube视频）即可让Codex自动记录并无限重复执行该任务。该功能支持自动化历史记录批量操作及本地/远程主机切换，依赖“…</p>
+          <a href="https://news.aibase.com/zh/news/29032" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频</span><span>优先级 A</span></div>
+          <h3>阿里巴巴发布HappyHorse 1.1 视频生成模型 多维度系统性升级</h3>
+          <p>阿里巴巴｜阿里巴巴近日正式发布视频生成模型HappyHorse 1.1，这是该模型的重大版本迭代。相较于1.0版本，HappyHorse 1.1在动态表现力、主体一致性、指令遵循、视觉质感和音频能力等多个核心维度实现系统性升级，整体性能显著提升。升级…</p>
+          <a href="https://news.aibase.com/zh/news/29053" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>一个声音、14种语言：网易有道首发零口音免参考文本的跨语种语音克隆模型</h3>
+          <p>网易有道｜网易有道发布Confucius4-TTS大模型语音合成引擎，实现全球首创不依赖参考文本的14种语言无口音跨语种语音克隆。该模型支持3秒极速克隆、零样本音色复刻、跨语种无痕音色迁移及情感克隆，开源54G完整模型权重供本地部署，适用于数字人、跨…</p>
+          <a href="https://www.infoq.cn/article/s1DZzm2t7WkEAW0MSyCf" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·数据</span><span>优先级 B</span></div>
+          <h3>中文在线推出逍遥海外作者平台 依托自研大模型赋能网文全链路出海</h3>
+          <p>中文在线｜2025年6月，中文在线推出面向全球创作者的AI写作平台“逍遥海外作者平台”(XIAOYAO)，依托自研的逍遥大模型，提供从构思生成到语言润色的全链路AI辅助创作支持。该平台具备跨语种本地化能力，可将中文叙事转化为符合海外读者习惯的内容，并…</p>
+          <a href="https://news.aibase.com/zh/news/29054" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="tool">
+          <div class="news-meta"><span>工具·Agent</span><span>优先级 B</span></div>
+          <h3>SoulAgent在2026智源大会亮相，展示数字分身技术</h3>
+          <p>智源研究院｜在2026智源大会上，智源研究院推出的SoulAgent正式亮相，旨在成为用户的数字分身。SoulAgent不仅能理解用户、沉淀长期记忆，还能感知外部世界并完成任务。其核心能力包括个人专属智能体和专家思维分身。通过实时感知20余个分会场内容…</p>
+          <a href="https://aiera.com.cn/2026/06/23/other/admin/100405/ai%e5%a5%87%e8%a7%82%ef%bc%9a%e6%88%91%e5%9c%a8%e4%b8%bb%e4%bc%9a%e5%9c%ba%e5%8d%b7%ef%bc%8cagent%e5%9c%a820%e4%bd%99%e4%b8%aa%e5%88%86%e4%bc%9a%e5%9c%ba%e6%9b%bf%e6%88%91%e5%90%ac%e4%bc%9a/" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>告别“你问我答”：ChatGPT 语音功能重磅升级，双向实时对话时代开启</h3>
+          <p>OpenAI｜OpenAI 正在测试名为“Bidi1”的新型语音模型，该模型支持双向并行处理，允许 AI 在说话的同时实时监听用户输入，并能立即响应用户的打断或新指令。这一功能显著提升了语音交互的流畅性和自然度，使对话体验更接近人类交流。目前该功能已在 …</p>
+          <a href="https://news.aibase.com/zh/news/29127" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·数据</span><span>优先级 C</span></div>
+          <h3>京东全栈开源JoyAI-VL-Interaction，从“一问一答”走向“边看边说”</h3>
+          <p>京东｜京东近日开源全球首个全栈交互模型JoyAI-VL-Interaction，该模型能够持续观察视频流并主动判断关键事件，实时响应复杂任务。在真人盲评中，对比豆包和Gemini视频通话助手胜率分别达77.6%和87.9%，监控预警场景胜率100…</p>
+          <a href="https://mp.weixin.qq.com/s/IY6XGp4k6VgD9ZPH6YprCA" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="tool">
+          <div class="news-meta"><span>工具·Agent</span><span>优先级 C</span></div>
+          <h3>当所有AI都在理解世界，这家公司在理解你</h3>
+          <p>Clipto.AI｜Clipto.AI推出端侧多模态搜索工具Clipto，旨在解决知识工作者在海量素材中难以找回信息的问题。创始人康洪文认为AI缺失了关键的记忆层（Memory Layer），即用户模型。Clipto通过本地多模态大模型处理用户数据，构建个人记…</p>
+          <a href="https://www.geekpark.net/news/366514" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·数据</span><span>优先级 C</span></div>
+          <h3>最大开源第一视角数据集 EgoLive 来了，名校站台、近百家机构争相申请</h3>
+          <p>京东｜京东开源了当前业界最大规模的人类第一视角数据集 EgoLive，包含2000小时视频、65,866个episode、346个真实世界任务，覆盖家庭、仓储、药房等场景。该数据集采用头戴式设备JoyEgoCam采集，提供多模态标注信息，包括手部…</p>
+          <a href="https://www.infoq.cn/article/3HqTDUKziZE3ukwbwHyC" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·数据</span><span>优先级 C</span></div>
+          <h3>跨模型与任务的 GitHub Copilot agentic harness 性能与效率评估</h3>
+          <p>GitHub｜GitHub Copilot agentic harness 在多项基准测试中表现出色，展示了强大的性能和高效率的 token 使用。该系统支持超过 20 种模型的灵活切换，为用户提供了多样化的选择和优化的任务处理能力。此次评估凸显了其在跨…</p>
+          <a href="https://aihot.virxact.com/items/cmqu3vy5f012psl80nraev5hz" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="tool">
+          <div class="news-meta"><span>工具·Agent</span><span>优先级 C</span></div>
+          <h3>Claude Code 6个实用Hook玩法</h3>
+          <p>Anthropic｜Claude Code 新增了6个实用的Hook玩法，包括权限弹窗提醒、开机日程播报、上下文预压缩自动生成摘要卡片等，利用内置的30个Hook事件（年初仅13个），这些规则脚本在运行时不消耗token。通过这些功能，Claude Code从…</p>
+          <a href="https://mp.weixin.qq.com/s/LVj2foSXi_hBRKxjuYaUyw" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·语音</span><span>优先级 A</span></div>
+          <h3>Leaf 开源项目：将网红峰哥做成实时通话 AI 分身</h3>
+          <p>MiniMax｜开发者 Leaf 开源项目将网红峰哥转化为实时通话的 AI 分身，集成了实时对话、音色克隆和人格注入技术，工程延迟优化至 1 秒内。技术方案包括使用 Cartesia ink-whisper 进行语音识别降噪，MiniMax 高速版大模型实…</p>
+          <a href="https://aihot.virxact.com/items/cmqv4vak40a1ssl805nqs76uk" target="_blank" rel="noopener">来源链接</a>
+        </article>
+        <article class="news-card" data-category="tool">
+          <div class="news-meta"><span>工具·Agent</span><span>优先级 C</span></div>
+          <h3>小互开源个人IP配图技能“小互IP Studio”，含31个原创角色</h3>
+          <p>小互｜博主小互开源了个人IP配图工具“小互IP Studio”，该工具包含31个原创角色（15个手绘线稿角色+16个谐音梗meme形象）及一套配图方法论。工具可自动读取文章内容，规划配图类型（情绪图/示意图/四格漫画），生成并自查返工。默认画风为…</p>
+          <a href="https://aihot.virxact.com/items/cmqu93tek02e2sl80iom0bica" target="_blank" rel="noopener">来源链接</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="next">
+      <div class="section-head">
+        <div class="eyebrow">05 / 下周关注</div>
+        <div>
+          <h2>不是结束语，是下一轮观察清单。</h2>
+          <p class="sub">留下可验证的问题，下周持续追踪。</p>
+        </div>
+      </div>
+
+      <div class="grid three">
+        <article class="card compact">
+          <span class="tag">观察 1</span>
+          <h3>豆包音频生成 1.0 的产品接入进度？</h3>
+          <p class="sub">重点看剪映 / 即梦 / 番茄的接入时间、开放额度与真实创作反馈。</p>
+        </article>
+        <article class="card compact">
+          <span class="tag blue">观察 2</span>
+          <h3>全双工语音谁先规模化？</h3>
+          <p class="sub">对比 OpenAI Bidi 1、BayLing-Duplex 的开放节奏与延迟、打断体验。</p>
+        </article>
+        <article class="card compact">
+          <span class="tag amber">观察 3</span>
+          <h3>Seedance 2.5 正式发布后的能力兑现？</h3>
+          <p class="sub">7 月初上线，关注单段长度、多素材参考与视频编辑的实测表现。</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>本周报由 2026.06.22 - 2026.06.28 行业资讯整理生成，共 23 条重点。数据来源见各卡片「来源链接」。</p>
+      <p style="margin-top: 12px; color: var(--muted); font-size: 14px;">音视频生成资源部 · 音视频之家 | 编辑：陈然</p>
+    </footer>
+    <section style="margin-top: 48px; text-align: center;">
+      <a href="http://172.31.101.179:6001/" target="_blank" rel="noopener" style="display: inline-block; border: none;">
+        <img src="promo-banner.png" alt="音视频之家" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px rgba(24, 32, 31, 0.08);">
+      </a>
+    </section>
+
+  </main>
+
+  <script>
+    const quickNav = document.querySelector(".quick-nav");
+    const quickNavToggle = document.querySelector(".quick-nav-toggle");
+
+    if (quickNav && quickNavToggle) {
+      const setQuickNav = (expanded) => {
+        quickNav.classList.toggle("collapsed", !expanded);
+        quickNavToggle.setAttribute("aria-expanded", String(expanded));
+      };
+
+      window.setTimeout(() => setQuickNav(false), 4200);
+      quickNavToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        setQuickNav(quickNav.classList.contains("collapsed"));
+      });
+      quickNav.addEventListener("click", () => {
+        if (quickNav.classList.contains("collapsed")) setQuickNav(true);
+      });
+      quickNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => window.setTimeout(() => setQuickNav(false), 280));
+      });
+    }
+
+    const filterButtons = Array.from(document.querySelectorAll(".filter-button"));
+    const newsCards = Array.from(document.querySelectorAll(".news-card"));
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach((item) => item.classList.toggle("active", item === button));
+        newsCards.forEach((card) => {
+          const visible = filter === "all" || card.dataset.category === filter;
+          card.classList.toggle("hidden", !visible);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
