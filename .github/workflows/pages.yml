@@ -1,1 +1,55 @@
+name: Deploy zhoubao to Pages
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Prepare site
+        run: |
+          mkdir -p _site/zhoubao
+          cp -r zhoubao/* _site/zhoubao/
+          cat > _site/index.html <<'EOF'
+          <!doctype html>
+          <html lang="zh-CN">
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="refresh" content="0; url=zhoubao/2026.06.29-07.05.html">
+            <title>周报跳转</title>
+          </head>
+          <body>
+            <p><a href="zhoubao/2026.06.29-07.05.html">打开最新周报</a></p>
+          </body>
+          </html>
+          EOF
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
