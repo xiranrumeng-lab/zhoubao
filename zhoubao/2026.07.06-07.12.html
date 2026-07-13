@@ -695,7 +695,8 @@
           <span class="chip">2026.07.06 - 07.12</span>
           <span class="chip">音视频生成 / 语音交互 / ASR 评测</span>
         </div>
-        <h1>语音 Agent 和长视频生成同时提速</h1>
+        <h1>行业资讯每周重点分享</h1>
+        <p class="lead" style="margin-top: 8px; margin-bottom: 4px; color: var(--muted); font-size: 15px; font-weight: 600;">音视频生成资源部・音视频之家</p>
         <p class="lead">本周主线很清楚：语音交互开始从“全双工模型”进入 API、工具调用和实时服务调度；视频生成则继续向长程一致性、导演控制、具身世界模型和商用 API 推进；评测与数据集也在从识别准确率转向真实对话体验。</p>
         <div class="hero-actions">
           <a class="button" href="#events">查看关键事件</a>
@@ -735,28 +736,28 @@
         <div class="eyebrow">01 / 重点摘要</div>
         <div>
           <h2>先看判断，再看新闻。</h2>
-          <p class="sub">按本周资讯密度和与你关注方向的贴合度整理。</p>
+          <p class="sub">本周重点围绕实时语音、音频生成、视频生成与评测基准展开。</p>
         </div>
       </div>
       <div class="grid two">
         <article class="card compact">
           <span class="tag">语音交互</span>
-          <h3>语音交互继续向全双工、工具调用和工程服务收敛</h3>
+          <h3>语音交互</h3>
           <p class="sub">OpenAI GPT-Realtime / GPT-Live、LiveServe、DuplexPO、Alexa 智能体等条目共同指向：语音 Agent 的重点不只是“能说话”，而是能边听边想、可打断、可调度、可接工具。</p>
         </article>
         <article class="card compact">
           <span class="tag amber">音频生成</span>
-          <h3>音频生成从音色逼真转向可控、可编辑与端侧部署</h3>
+          <h3>音频生成/语音合成</h3>
           <p class="sub">WordVoice、Audex、Supertonic 3、DELTA-TTS、ProPS 等信息显示，TTS/音频模型正在围绕逐字控制、多属性编辑、开源端侧和统一音频理解生成展开。</p>
         </article>
         <article class="card compact">
           <span class="tag blue">视频生成</span>
-          <h3>视频生成进入长程一致性、API 开放和具身世界模型阶段</h3>
+          <h3>视频生成/编辑</h3>
           <p class="sub">Seedance 2.5、LingBot-World、ShotStream、WorldDirector、PAI 2.0 和 VMEG AI 都在强化长视频、导演控制、素材参考、视频本地化与场景一致性。</p>
         </article>
         <article class="card compact">
           <span class="tag red">ASR/评测</span>
-          <h3>ASR 与评测从识别准确率走向真实交互数据和体验指标</h3>
+          <h3>ASR与评测基准</h3>
           <p class="sub">Cohere Transcribe Arabic、MOSS、Aleph、SPEARBench、DuplexChat、LALM 音频评判等条目把关注点从 WER/CER 扩展到方言、全双工、自然度、隐私和评判模型可靠性。</p>
         </article>
       </div>
@@ -767,14 +768,14 @@
         <div class="eyebrow">02 / 关键事件</div>
         <div>
           <h2>按影响大小排列，自家与音视频优先。</h2>
-          <p class="sub">本周最值得关注的 6 条事件，点击标题可跳转原文。</p>
+          <p class="sub">以下为本周具有代表性的重点动态，覆盖模型发布、开源进展、产品能力与评测基准。</p>
         </div>
       </div>
       <div class="event-list">
         <article class="event" data-category="interaction">
           <div class="event-date"><span class="event-day">2026.07.07</span><span class="event-track">语音交互</span></div>
           <div>
-            <h3><a href="https://mp.weixin.qq.com/s/x5hHSmp_W3JVA91m2NsqnQ" target="_blank" rel="noopener">OpenAI 开放 GPT-Realtime-2.1 / GPT-Live，实时语音进入 API 与产品双线推进</a></h3>
+            <h3><a href="https://mp.weixin.qq.com/s/x5hHSmp_W3JVA91m2NsqnQ" target="_blank" rel="noopener">OpenAI 开放 GPT-Realtime-2.1 与 2.1-mini 语音模型 API</a></h3>
             <p>OpenAI 同周出现 GPT-Realtime-2.1、2.1-mini 与 GPT-Live 相关更新，核心信号是低延迟语音、后台推理、工具调用和全双工体验开始面向开发者与产品入口并行落地。</p>
           </div>
           <span class="impact high">高影响</span>
@@ -782,7 +783,7 @@
         <article class="event" data-category="interaction">
           <div class="event-date"><span class="event-day">2026.07.09</span><span class="event-track">实时服务</span></div>
           <div>
-            <h3><a href="https://mp.weixin.qq.com/s/7Kf6vb6O8u6zVyN9-jfiog" target="_blank" rel="noopener">LiveServe 面向全模态实时语音交互，降低首包延迟与打断浪费</a></h3>
+            <h3><a href="https://mp.weixin.qq.com/s/7Kf6vb6O8u6zVyN9-jfiog" target="_blank" rel="noopener">LiveServe：引入交互感知调度与缓存预加载，音频首包延迟降低至多 2.21 倍</a></h3>
             <p>LiveServe 引入交互感知调度、缓存换出和异步预加载，把实时语音 Agent 的竞争从模型能力延伸到服务系统、首包延迟和打断成本。</p>
           </div>
           <span class="impact high">高影响</span>
@@ -790,7 +791,7 @@
         <article class="event" data-category="audio">
           <div class="event-date"><span class="event-day">2026.07.09</span><span class="event-track">可控 TTS</span></div>
           <div>
-            <h3><a href="https://mp.weixin.qq.com/s/X8cQq2MQtGDHtvGCxCsD3Q" target="_blank" rel="noopener">WordVoice 开源 4.7k 小时字级标注数据，TTS 走向逐字可控</a></h3>
+            <h3><a href="https://mp.weixin.qq.com/s/X8cQq2MQtGDHtvGCxCsD3Q" target="_blank" rel="noopener">WordVoice：逐字控制的开源TTS，4.7k小时数据+五维字级控制</a></h3>
             <p>WordVoice 通过字级五维标注和 bound-token 机制控制时长、边界、能量、音高和语调，代表语音合成从“像真人”进一步走向精细可编辑。</p>
           </div>
           <span class="impact medium">中高影响</span>
@@ -798,7 +799,7 @@
         <article class="event" data-category="video">
           <div class="event-date"><span class="event-day">2026.07.10</span><span class="event-track">视频 API</span></div>
           <div>
-            <h3><a href="https://news.aibase.com/zh/news/29516" target="_blank" rel="noopener">字节 Seedance 2.5 将全量开放 API，视频生成继续商用化</a></h3>
+            <h3><a href="https://news.aibase.com/zh/news/29516" target="_blank" rel="noopener">字节跳动 Seedance2.5模型将于7月16日全量开放 API</a></h3>
             <p>Seedance 2.5 支持 30 秒单段原生视频、多素材参考和视频编辑能力，API 全量开放意味着视频生成从模型展示进入批量调用和业务集成阶段。</p>
           </div>
           <span class="impact high">高影响</span>
@@ -806,7 +807,7 @@
         <article class="event" data-category="video">
           <div class="event-date"><span class="event-day">2026.07.09</span><span class="event-track">世界模型</span></div>
           <div>
-            <h3><a href="https://mp.weixin.qq.com/s/7Kf6vb6O8u6zVyN9-jfiog" target="_blank" rel="noopener">蚂蚁 LingBot-Video / LingBot-World 2.0 推进具身视频基模与实时世界生成</a></h3>
+            <h3><a href="https://mp.weixin.qq.com/s/7Kf6vb6O8u6zVyN9-jfiog" target="_blank" rel="noopener">LingBot-World 2.0：采用 14B/1.3B 双版本架构，支持小时级实时交互生成</a></h3>
             <p>LingBot 系列把视频生成与机器人、世界模型、仿真数据结合，显示视频模型正在从内容生成扩展到具身智能训练和交互式环境建模。</p>
           </div>
           <span class="impact medium">中高影响</span>
@@ -814,7 +815,7 @@
         <article class="event" data-category="asr">
           <div class="event-date"><span class="event-day">2026.07.06</span><span class="event-track">评测基准</span></div>
           <div>
-            <h3><a href="https://mp.weixin.qq.com/s/QOv_77ZJ3QBtluBb7jOgAQ" target="_blank" rel="noopener">SPEARBench 与 DuplexChat 把全双工语音评测推向真实对话动态</a></h3>
+            <h3><a href="https://mp.weixin.qq.com/s/QOv_77ZJ3QBtluBb7jOgAQ" target="_blank" rel="noopener">SPEARBench：流式语音到语音语言模型自然度评估基准</a></h3>
             <p>SPEARBench 关注延迟、插话、方言、情感和立场自然度；DuplexChat 则提供 41.5 万小时说话人分离对话语音，评测和数据都在向真实口语交互靠近。</p>
           </div>
           <span class="impact watch">需跟踪</span>
@@ -826,14 +827,14 @@
       <div class="section-head">
         <div class="eyebrow">03 / 赛道信号</div>
         <div>
-          <h2>把资讯压缩成三句话。</h2>
-          <p class="sub">适合例会开场或群内转述。</p>
+          <h2>按方向提炼本周信号。</h2>
+          <p class="sub">本周动态显示，音视频生成正从单点能力展示走向更完整的产品化、工程化和评测体系。</p>
         </div>
       </div>
       <div class="grid three">
-        <article class="card compact"><span class="tag">信号 1</span><h3>语音 Agent 的重点转向“边说边做”。</h3><p class="sub">OpenAI、LiveServe、DuplexPO、ElevenLabs 架构讨论都在说明：全双工只是入口，真正的落地要看工具调用、调度、打断和可观测性。</p></article>
-        <article class="card compact"><span class="tag blue">信号 2</span><h3>视频生成正在从短片效果走向生产系统。</h3><p class="sub">Seedance 2.5 API、LingBot-World、ShotStream、WorldDirector 都强调更长时长、更强一致性和导演式控制。</p></article>
-        <article class="card compact"><span class="tag amber">信号 3</span><h3>数据和评测开始服务真实对话。</h3><p class="sub">DuplexChat、SPEARBench、LIME-440K、LALM judge 把语音模型评价从转写准确率扩展到情感、插话、方言、立场和评判可靠性。</p></article>
+        <article class="card compact"><span class="tag">信号 1</span><h3>语音交互</h3><p class="sub">OpenAI、LiveServe、DuplexPO、ElevenLabs 架构讨论都在说明：全双工只是入口，真正的落地要看工具调用、调度、打断和可观测性。</p></article>
+        <article class="card compact"><span class="tag blue">信号 2</span><h3>视频生成</h3><p class="sub">Seedance 2.5 API、LingBot-World、ShotStream、WorldDirector 都强调更长时长、更强一致性和导演式控制。</p></article>
+        <article class="card compact"><span class="tag amber">信号 3</span><h3>评测基准与数据集</h3><p class="sub">DuplexChat、SPEARBench、LIME-440K、LALM judge 把语音模型评价从转写准确率扩展到情感、插话、方言、立场和评判可靠性。</p></article>
       </div>
     </section>
 
@@ -842,7 +843,7 @@
         <div class="eyebrow">04 / 资讯卡片</div>
         <div>
           <h2>可筛选的新闻池（46 条）。</h2>
-          <p class="sub">覆盖本周重点发布、开源项目、产品动态与研究进展，点击分类可快速筛选。</p>
+          <p class="sub">本周资讯按方向归类展示，保留来源链接便于查看原文。</p>
         </div>
       </div>
       <div class="filter-bar">
@@ -1138,7 +1139,7 @@
         <div class="eyebrow">05 / 下周关注</div>
         <div>
           <h2>不是结束语，是下一轮观察清单。</h2>
-          <p class="sub">留下可验证的问题，下周持续追踪。</p>
+          <p class="sub">以下方向值得在后续产品发布、模型开放和应用落地中继续关注。</p>
         </div>
       </div>
       <div class="grid three">
