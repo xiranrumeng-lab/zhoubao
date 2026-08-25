@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>音视频生成每周资讯分享｜第34周 2026.08.10-08.16</title><style>
+    :root {
+      --ink: #17211f;
+      --muted: #60716d;
+      --paper: #faf8f2;
+      --panel: #fffdf8;
+      --line: #ded8ca;
+      --green: #0c756f;
+      --green-soft: #e0f0ec;
+      --amber: #b7791f;
+      --amber-soft: #f5e7c8;
+      --blue: #2f6f98;
+      --blue-soft: #e5f1f7;
+      --red: #a94438;
+      --shadow: 0 18px 52px rgba(24, 32, 31, 0.12);
+      --radius: 8px;
+      --sans: "Aptos", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+      --serif: Georgia, "Times New Roman", "Songti SC", serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(12, 117, 111, 0.055) 1px, transparent 1px),
+        linear-gradient(rgba(12, 117, 111, 0.04) 1px, transparent 1px),
+        var(--paper);
+      background-size: 44px 44px;
+      font-family: var(--sans);
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: var(--green);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(12, 117, 111, 0.35);
+    }
+
+    a:hover {
+      border-bottom-color: var(--green);
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 36px 0 72px;
+    }
+
+    .quick-nav {
+      position: fixed;
+      left: 18px;
+      top: 50%;
+      z-index: 20;
+      display: grid;
+      gap: 8px;
+      width: 150px;
+      padding: 12px;
+      border: 1px solid rgba(102, 120, 115, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.46);
+      box-shadow: 0 12px 28px rgba(22, 32, 30, 0.08);
+      transform: translateY(-50%);
+      backdrop-filter: blur(12px);
+      transition: width 0.18s ease, padding 0.18s ease;
+    }
+
+    .quick-nav.collapsed {
+      width: 46px;
+      padding: 10px 8px;
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: 0 14px 32px rgba(22, 32, 30, 0.12);
+      cursor: pointer;
+    }
+
+    .quick-nav button {
+      min-height: 34px;
+      border: 1px solid rgba(12, 117, 111, 0.2);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font: 800 13px/1 var(--sans);
+      cursor: pointer;
+    }
+
+    .quick-nav.collapsed button {
+      writing-mode: vertical-rl;
+      min-height: 86px;
+      padding: 10px 6px;
+    }
+
+    .quick-nav-list {
+      display: grid;
+      gap: 4px;
+    }
+
+    .quick-nav.collapsed .quick-nav-list {
+      display: none;
+    }
+
+    .quick-nav-list a {
+      display: block;
+      padding: 7px 8px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .quick-nav-list a:hover {
+      color: var(--green);
+      background: rgba(224, 240, 236, 0.72);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 34px;
+      align-items: center;
+      min-height: 72vh;
+      padding: 20px 0 44px;
+    }
+
+    .kicker {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.82);
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 22px;
+      font-family: var(--serif);
+      font-size: clamp(46px, 6.4vw, 86px);
+      line-height: 1.02;
+      font-weight: 650;
+      letter-spacing: 0;
+      text-wrap: pretty;
+    }
+
+    .lead {
+      max-width: 720px;
+      color: #33413e;
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fffdf8;
+      font: 800 14px/1 var(--sans);
+      text-decoration: none;
+      transition: transform 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-bottom-color: var(--ink);
+    }
+
+    .button.secondary {
+      background: rgba(255, 253, 248, 0.76);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .hero-board {
+      display: grid;
+      gap: 14px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.9);
+      box-shadow: var(--shadow);
+    }
+
+    .board-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .board-head strong {
+      font-size: 18px;
+    }
+
+    .week-tag {
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .signal {
+      display: grid;
+      grid-template-columns: 92px 1fr 42px;
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(222, 216, 202, 0.78);
+    }
+
+    .signal:last-child {
+      border-bottom: 0;
+    }
+
+    .signal-name {
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: #efe9dc;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    .score {
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      text-align: right;
+    }
+
+    .bar {
+      height: 9px;
+      border-radius: 999px;
+      background: #efe9dc;
+      overflow: hidden;
+    }
+
+    .bar span {
+      display: block;
+      width: var(--value);
+      height: 100%;
+      border-radius: inherit;
+      background: var(--green);
+    }
+
+    .score {
+      color: var(--muted);
+      font-size: 12px;
+      font-family: var(--mono);
+      text-align: right;
+    }
+
+    .section {
+      padding: 56px 0 18px;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font: 800 13px/1.4 var(--mono);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.15;
+      font-weight: 650;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.28;
+    }
+
+    .sub {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      min-height: 100%;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: 0 12px 30px rgba(24, 32, 31, 0.06);
+    }
+
+    .card.compact {
+      padding: 14px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #0a514c;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .tag.blue {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .tag.amber {
+      background: var(--amber-soft);
+      color: #76500f;
+    }
+
+    .event-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .event {
+      display: grid;
+      grid-template-columns: 130px 1fr 92px;
+      gap: 14px;
+      align-items: start;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.86);
+    }
+
+    .event-date {
+      display: grid;
+      gap: 7px;
+      align-content: start;
+      color: var(--green);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .event-day {
+      line-height: 1.25;
+    }
+
+    .event-track {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 26px;
+      align-items: center;
+      padding: 4px 8px;
+      border: 1px solid rgba(12, 117, 111, 0.2);
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .event[data-category="audio"] .event-track {
+      border-color: rgba(183, 121, 31, 0.28);
+      background: var(--amber-soft);
+      color: #76500f;
+    }
+
+    .event[data-category="video"] .event-track {
+      border-color: rgba(47, 111, 152, 0.25);
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .event[data-category="asr"] .event-track {
+      border-color: rgba(169, 68, 56, 0.22);
+      background: #f5e1dd;
+      color: var(--red);
+    }
+
+    .event p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .impact {
+      justify-self: end;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .impact.high {
+      background: #dcefeb;
+      color: var(--green);
+    }
+
+    .impact.medium {
+      background: var(--amber-soft);
+      color: #76500f;
+    }
+
+    .impact.watch {
+      background: var(--blue-soft);
+      color: var(--blue);
+    }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.72);
+    }
+
+    .filter-button {
+      min-height: 34px;
+      padding: 7px 12px;
+      border: 1px solid rgba(12, 117, 111, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.72);
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .filter-button.active {
+      background: var(--green);
+      color: #fffdf8;
+      border-color: var(--green);
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .news-card {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.88);
+    }
+
+    .news-card.hidden {
+      display: none;
+    }
+
+    .news-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-row {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: auto;
+      padding-top: 4px;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: thin;
+    }
+
+    .source-row a {
+      flex: 0 0 auto;
+    }
+
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 12px;
+    }
+
+    .insight {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .insight:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .num {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fffdf8;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .quote {
+      padding: 20px;
+      border-radius: var(--radius);
+      background: #1f2927;
+      color: #fffdf8;
+      font-family: var(--mono);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .footer {
+      margin-top: 48px;
+      padding-top: 26px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .section-head,
+      .grid.three,
+      .grid.two,
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .quick-nav {
+        top: auto;
+        left: 12px;
+        bottom: 12px;
+        transform: none;
+      }
+
+      .quick-nav:not(.collapsed) {
+        width: min(210px, calc(100vw - 24px));
+      }
+
+      .event {
+        grid-template-columns: 1fr;
+      }
+
+      .impact {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(100% - 22px, 1180px);
+        padding-top: 20px;
+      }
+
+      h1 {
+        font-size: clamp(40px, 13vw, 62px);
+      }
+
+      .filter-bar {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .filter-button {
+        flex: 0 0 auto;
+      }
+    }
+  
+    .source-muted { color: var(--muted); font-size: 13px; }
+    @media (min-width: 701px) and (max-width: 1300px) {
+      .quick-nav.collapsed { left: 4px; width: 38px; padding: 8px 4px; }
+      .quick-nav.collapsed button { padding: 8px 4px; }
+    }
+</style></head>
+<body>
+  <nav class="quick-nav" aria-label="快速导航"><button class="quick-nav-toggle" type="button" aria-expanded="true">周报导航</button><div class="quick-nav-list"><a href="#top">本周概览</a><a href="#summary">重点摘要</a><a href="#events">关键事件</a><a href="#signals">赛道信号</a><a href="#news">资讯卡片</a><a href="#next">下周关注</a></div></nav>
+  <main class="shell" id="top">
+    <section class="hero"><div><div class="kicker"><span class="chip">行业资讯周报</span><span class="chip">第 34 周</span><span class="chip">2026.08.17 - 08.23</span><span class="chip">音视频生成 / 语音交互 / 评测基准</span></div><h1>音视频生成每周资讯分享</h1><p class="lead" style="margin-top: 8px; margin-bottom: 4px; color: var(--muted); font-size: 15px; font-weight: 600;">音视频生成资源部・音视频之家</p><p class="lead">本周语音交互方向从模型发布扩展至全链路产品化，包括CosyAgent无代码搭建、实时轮次判断与合成语音检测；音频生成围绕多语言TTS、AI音乐工作流与统一音频场景展开，Luna-TTS登顶Hugging Face Arena；视频侧MiniMax Design、LTX-2.5音视频模型与实时世界模型并进，推动内容生产向Agent驱动的端到端流水线演进。</p><div class="hero-actions"><a class="button" href="#summary">查看本周重点</a><a class="button secondary" href="#news">筛选资讯卡片</a></div></div>
+      <aside class="hero-board" aria-label="本周信号强度"><div class="board-head"><strong>本周信号强度</strong><span class="week-tag">2026.08.17 - 2026.08.23</span></div><div class="signal"><span class="signal-name">语音交互</span><div class="bar"><span style="--value: 97%"></span></div><span class="score">强</span></div><div class="signal"><span class="signal-name">音频·音乐</span><div class="bar"><span style="--value: 96%"></span></div><span class="score">强</span></div><div class="signal"><span class="signal-name">视频生成</span><div class="bar"><span style="--value: 94%"></span></div><span class="score">强</span></div><div class="signal"><span class="signal-name">ASR·评测</span><div class="bar"><span style="--value: 91%"></span></div><span class="score">强</span></div></aside></section>
+    <section class="section" id="summary"><div class="section-head"><div class="eyebrow">01 / 重点摘要</div><div><h2>本周主要判断。</h2><p class="sub">本周重点落在全双工数据与评测、连续语音生成、开放视频模型和交互式世界建模。</p></div></div><div class="grid two">
+        <article class="card compact"><span class="tag">语音交互</span><h3>全双工语音补齐数据、评测与交互控制</h3><p class="sub">DuplexGen、DuplexWorld、Lychee-FD、JoyAI-Talker 和真实电话延迟榜，把竞争焦点从“能否实时对话”推进到轮次偏好、真实任务完成、打断控制和端到端体验。</p></article>
+        <article class="card compact"><span class="tag amber">音频生成</span><h3>连续生成路线进入密集开源期</h3><p class="sub">IndexTTS-2.5、dots.tts、SemBridge、MiDashengLM-Gen、SwanTale 与 MiniMax Music 3.0 覆盖情感复刻、连续隐空间、场景音频、多说话人内容和完整歌曲生成。</p></article>
+        <article class="card compact"><span class="tag blue">视频生成</span><h3>开放模型同时追求速度和可控性</h3><p class="sub">LTX-2.5、Wan-Animate-2、Seedance 2.5 生态、HiDream-O1-World 与 Cosmos 3 Edge，推动视频生成向快速推理、角色一致性、视角控制和持续交互扩展。</p></article>
+        <article class="card compact"><span class="tag red">评测与数据</span><h3>真实世界数据成为模型升级的关键变量</h3><p class="sub">DuplexWorld、Voice Agent Latency Benchmark、Agentic ASR 与 Sekai2 分别从任务完成、真实电话延迟、语义纠错和三维轨迹切入，评测开始贴近真实使用过程。</p></article>
+      </div></section>
+    <section class="section" id="events"><div class="section-head"><div class="eyebrow">02 / 关键事件</div><div><h2>本周代表性动态。</h2><p class="sub">以下事件集中体现语音交互、音频生成、视频生成和评测数据的关键进展。</p></div></div><div class="event-list">
+        <article class="event" data-category="interaction"><div class="event-date"><span class="event-day">2026.08.11</span><span class="event-track">全双工数据</span></div><div><h3><a href="https://mp.weixin.qq.com/s/mlHbZf19dvEDxPX4VK1o9g" target="_blank" rel="noopener">DuplexGen：面向全双工语音交互的对话数据合成框架</a></h3><p>DuplexGen 将轮次控制拆成位置级决策，并用少量人类偏好标注校准接管、附和和沉默策略；框架覆盖 6 类场景，已开放文本语料、语音数据和训练代码。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="asr"><div class="event-date"><span class="event-day">2026.08.13</span><span class="event-track">真实任务评测</span></div><div><h3><a href="https://mp.weixin.qq.com/s/uvUD3kAdC2BLZJ9KWnfDUw" target="_blank" rel="noopener">DuplexWorld：真实任务全双工语音智能体评测</a></h3><p>DuplexWorld 覆盖银行、保险、旅行、医疗、物流和寻路等真实任务，同时评估任务完成、对话动态与自然度；最佳模型的任务通过率仍不足一半。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="interaction"><div class="event-date"><span class="event-day">2026.08.13</span><span class="event-track">对话感知 TTS</span></div><div><h3><a href="https://mp.weixin.qq.com/s/uvUD3kAdC2BLZJ9KWnfDUw" target="_blank" rel="noopener">Flux TTS：面向语音智能体的对话感知文本转语音</a></h3><p>Deepgram推出Flux TTS，跨轮次保留对话上下文，使语速、重音和情绪表达随前文变化；原生支持用户打断和流式大模型输入，</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="interaction"><div class="event-date"><span class="event-day">2026.08.13</span><span class="event-track">开源全双工</span></div><div><h3><a href="https://mp.weixin.qq.com/s/uvUD3kAdC2BLZJ9KWnfDUw" target="_blank" rel="noopener">Lychee-FD：端到端全双工语音模型开源</a></h3><p>哈工大深圳等团队开源Lychee-FD，用统一多流架构同时建模聆听、理解、语音生成和交互控制；定制多流推理后发言阶段加速约2.96倍，并降低长对话显存增长。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="audio"><div class="event-date"><span class="event-day">2026.08.14</span><span class="event-track">音乐生成</span></div><div><h3><a href="https://www.minimax.io/blog/minimax-music-3-0-next-generation-open-weights-production-ready-versatile-music-model" target="_blank" rel="noopener">MiniMax Music 3.0 发布：新一代开源权重、生产级全能音乐模型</a></h3><p>MiniMax Music 3.0 可根据创意概念和可选歌词，一次完成整首歌的作曲、编曲、演奏与制作，最长支持 5 分钟，并以开放权重形态进入生产级音乐工作流。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="video"><div class="event-date"><span class="event-day">2026.08.12</span><span class="event-track">开放视频模型</span></div><div><h3><a href="https://comfy.org/ltx-2.5" target="_blank" rel="noopener">LTX正式发布开放世界模型LTX-2.5:原生集成ComfyUI且中小企业免费</a></h3><p>LTX-2.5 以开放权重视频与世界模型形态发布，原生集成 ComfyUI 并提供托管 API；在双 GB200 上生成 10 秒 720p 视频约需 6.8 秒，中小企业可按许可免费使用。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="video"><div class="event-date"><span class="event-day">2026.08.16</span><span class="event-track">实时角色动画</span></div><div><h3><a href="https://mp.weixin.qq.com/s/yjKIgznopdgVxk9gYKe_bQ" target="_blank" rel="noopener">Wan-Animate-2开源：端到端角色动画生成</a></h3><p>Wan-Animate-2 取消骨架提取等中间动作表示，直接用参考图和驱动视频生成角色动画；轻量版通过蒸馏进入实时阈值，并支持文本驱动的视角控制。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="asr"><div class="event-date"><span class="event-day">2026.08.14</span><span class="event-track">世界模型数据集</span></div><div><h3><a href="https://mp.weixin.qq.com/s/2BcUElMzxrMddEyiRmic6A" target="_blank" rel="noopener">Sekai2真实世界视频数据集：2826小时视频配三维轨迹</a></h3><p>Sekai2 包含约 12.9 万段真实世界视频、总计 2826 小时，为每段视频提供三维相机轨迹和时间定位描述，并形成 64.9 万个时序标注片段，面向交互式世界建模与长程视频生成。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="audio"><div class="event-date"><span class="event-day">2026.08.13</span><span class="event-track">连续 TTS</span></div><div><h3><a href="https://mp.weixin.qq.com/s/OMV1laUJ599AGrHo3Okq0Q" target="_blank" rel="noopener">dots.tts开源：连续自回归文本转语音基座</a></h3><p>小红书开源 20 亿参数连续自回归 TTS 模型 dots.tts，跳过离散声学标记并直接在连续隐空间生成语音；项目开放检查点及训练、推理、微调和蒸馏代码。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="audio"><div class="event-date"><span class="event-day">2026.08.14</span><span class="event-track">通用音频生成</span></div><div><h3><a href="https://mp.weixin.qq.com/s/CoyUmvNJweLdXV44sdSOew" target="_blank" rel="noopener">MiDashengLM-Gen：端到端通用音频场景生成模型</a></h3><p>小米开源MiDashengLM-Gen，可一次生成包含人声、音乐、音效和环境声的音频场景；模型约3B参数，文章称8GB显存可运行，并使用大规模音频数据强化语音合成和场景声生成。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="video"><div class="event-date"><span class="event-day">2026.08.17</span><span class="event-track">交互式世界模型</span></div><div><h3><a href="https://mp.weixin.qq.com/s/9npmotdGG09cJJlj7WqZDQ" target="_blank" rel="noopener">HiDream-O1-World：原生全模态交互式世界模型</a></h3><p>智象未来发布HiDream-O1-World，定位为可自由探索、持续交互并遵循物理规律的动态世界模型；用户可在生成场景中漫游、切换视角、编辑和交互，使AI视频从成片走向可玩的世界。</p></div><span class="impact high">高影响</span></article>
+        <article class="event" data-category="audio"><div class="event-date"><span class="event-day">2026.08.10</span><span class="event-track">多说话人音频</span></div><div><h3><a href="https://mp.weixin.qq.com/s/TKq5qju7vkbxC3uhM-7tjg" target="_blank" rel="noopener">SwanTale：统一多说话人语音与音频生成模型</a></h3><p>语音论文相关研究提出SwanTale，面向配音和有声剧场景统一零样本语音克隆与指令式音频设计；其数据管线构造细粒度场景、说话人和内容描述，在零样本和指令跟随评测中取得领先表现。</p></div><span class="impact high">高影响</span></article>
+      </div></section>
+    <section class="section" id="signals"><div class="section-head"><div class="eyebrow">03 / 赛道信号</div><div><h2>按方向提炼本周信号。</h2><p class="sub">模型能力正从单点指标进入数据、推理、交互和部署共同约束的产品阶段。</p></div></div><div class="grid three">
+        <article class="card compact"><span class="tag">信号 1</span><h3>全双工语音开始竞争“如何轮次交互”</h3><p class="sub">DuplexGen 用偏好数据校准接管与附和，DuplexWorld 用真实任务检验完成率，Flux TTS 与 JoyAI-Talker进一步处理上下文、打断和声音表达。</p></article>
+        <article class="card compact"><span class="tag amber">信号 2</span><h3>音频模型从单一 TTS 走向统一生成</h3><p class="sub">MiDashengLM-Gen、SwanTale、MiniMax Music 3.0 和 ElevenLabs Sounds 把人声、音乐、音效、环境声与多说话人内容放进更统一的生成链路。</p></article>
+        <article class="card compact"><span class="tag blue">信号 3</span><h3>视频生成与世界模型边界继续收敛</h3><p class="sub">LTX-2.5、Wan-Animate-2、HiDream-O1-World、Cosmos 3 Edge 与 Sekai2 同时强调速度、动作、轨迹和可交互性，视频正在从成片生成走向可持续演化的世界。</p></article>
+      </div></section>
+    <section class="section" id="news"><div class="section-head"><div class="eyebrow">04 / 资讯卡片</div><div><h2>重点资讯列表（57 条）。</h2><p class="sub">本周资讯按方向归类展示，保留来源、论文、代码与数据入口。</p></div></div><div class="filter-bar">
+        <button class="filter-button active" type="button" data-filter="all">全部 · 57</button>
+        <button class="filter-button" type="button" data-filter="interaction">语音交互 · 19</button>
+        <button class="filter-button" type="button" data-filter="audio">音频·音乐 · 18</button>
+        <button class="filter-button" type="button" data-filter="video">视频生成 · 11</button>
+        <button class="filter-button" type="button" data-filter="asr">评测·数据 · 3</button>
+        <button class="filter-button" type="button" data-filter="model">模型·行业 · 6</button>
+      </div><div class="news-grid">
+
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>阿里</span></div>
+          <h3>阿里Qwen-Audio-3.0系列语音模型上线千问AI平台，斩获国际评测“大满贯”</h3>
+          <p>阿里巴巴近日宣布其Qwen-Audio-3.0系列语音模型在千问AI平台全面上线。该系列包括语音识别（ASR）、语音合成（TTS）和实时语音交互（Realtime）三大模型，并在权威AI评测平台Artificial Analysis的2026年7月语音排行榜中，一举包揽了这三个核心赛道的全球第一，实现“大满贯”。模型具备复杂语境识别、多语种/方言合成与情绪控制、端到端实时对话与打断等先进能力，已应用于千问App等多款产品。同时，千问AI平台近期密集更新了多模态模型矩阵，并推出优惠订阅服务以降低开发者门槛。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30399" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>音潮</span></div>
+          <h3>100%纯血国产AI反超Suno！一个下午做出百万预算主题曲</h3>
+          <p>文章报道了国产AI音乐公司音潮及其大模型V4.0的技术突破与市场表现。针对Suno等海外模型在处理中文音乐时存在的发音、情绪和架构问题，音潮选择从底层重构模型，专为中文声调、语感优化，实现了在指令理解、情绪落地和曲风细分上的显著提升。其模型已连续两年为WAIC世界人工智能大会创作官方主题曲，将传统需数月、百万预算的流程压缩至一个下午。音潮依托国产算力，构建了从C端APP到B端API的完整产品矩阵，并已实现10语种覆盖，展示了从本土化出发走向全球的技术与商业路径。</p>
+          <div class="source-row"><a href="https://aiera.com.cn/2026/08/18/other/admin/109516/100%e7%ba%af%e8%a1%80%e5%9b%bd%e4%ba%a7ai%e5%8f%8d%e8%b6%85suno%ef%bc%81%e4%b8%80%e4%b8%8b%e5%8d%88%e5%81%9a%e5%87%ba%e7%99%be%e4%b8%87%e9%a2%84%e7%ae%97%e4%b8%bb%e9%a2%98%e6%9b%b2/" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>MiniMax</span></div>
+          <h3>MiniMax Design发布:用自然语言“指挥”视频创作，告别逐帧编辑</h3>
+          <p>MiniMax正式发布生产力工具MiniMax Design，该产品基于原生多模态视频模型H3构建，允许用户通过自然语言表达创作意图，系统自动完成从素材生成到成片交付的全流程。产品支持商业场景如营销素材生成、教育短视频制作和影视创作预演，并兼容ComfyUI等开源生态。MiniMax Design通过Agent驱动工作流解决了多模态模型的可控性与连贯性问题，为视频内容工业化生产提供了新范式。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30503" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>Reddit</span></div>
+          <h3>Reddit测试AI视频功能，将文本帖子转为音视频内容</h3>
+          <p>Reddit正在测试一项AI驱动的新功能，旨在将平台上的文本帖子和部分评论自动转换为音频、视频内容。该功能通过AI语音朗读主帖及精选评论，并在视频中同步高亮对应文本，以降低内容消费门槛、探索新的内容呈现与消费方式。此测试是Reddit视频化战略的一部分，是其将海量社区讨论转化为多媒体内容的重要探索，但初期可能存在AI发音错误等挑战。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30419" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>SAP</span></div>
+          <h3>SAP联合Team Liquid推出AI语音应用，助力职业电竞数据分析</h3>
+          <p>SAP与职业电竞俱乐部Team Liquid合作开发了一款AI语音智能应用，该应用能将比赛和训练中的队内语音转化为结构化赛事数据。通过多声道音频分离、语音转写、发言人识别和情绪分析等技术，将零散的队内通话转化为按时间轴排列的结构化数据，并生成时间戳。战队可以利用这些数据分析选手的沟通方式、情绪变化及决策过程，从而优化战术和提升竞技表现。此次合作展示了AI语音技术在专业场景数据分析中的应用潜力。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30526" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>浙江大学</span></div>
+          <h3>视频DiT直接「长」出4D世界！浙大仅用1K条数据打通统一接口</h3>
+          <p>浙江大学的研究团队提出了一种名为Latent-to-4D的新方法，能够直接将视频生成模型的latent表示转化为动态4D场景，绕过了传统方法中先生成RGB视频再进行4D重建的冗余步骤。该方法通过Latent-to-4D Alignment and Refinement (L4AR)网络实现了视频latent到4D latent的高效转换，仅需约1K条重建视频数据训练，即可适配不同规模的Text-to-Video和Image-to-Video模型，实现了更完整的几何结构和动态效果。</p>
+          <div class="source-row"><a href="https://aiera.com.cn/2026/08/20/other/admin/109788/%e8%a7%86%e9%a2%91dit%e7%9b%b4%e6%8e%a5%e3%80%8c%e9%95%bf%e3%80%8d%e5%87%ba-4d-%e4%b8%96%e7%95%8c%ef%bc%81%e6%b5%99%e5%a4%a7%e4%bb%85%e7%94%a81k%e6%9d%a1%e6%95%b0%e6%8d%ae%e6%89%93%e9%80%9a%e7%bb%9f/" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>Populous</span></div>
+          <h3>Populous 如何用 Runway 呈现全球标志性场馆设计</h3>
+          <p>全球设计公司 Populous 的高级建筑师 Georgina Myers 分享了团队如何利用 Runway 工具优化体育场馆的概念设计流程。传统方法中，完整的视频渲染需要外部团队至少三周时间，且设计模型需提前两周冻结。Runway 的应用大幅缩短了视觉制作时间，能快速生成具有尺度感的完整渲染和航拍图，使设计师能将更多时间投入到设计本身。该工具已成功应用于利雅得 MBS 体育场等中东项目，支持 9 种不同活动模式的场景迭代。</p>
+          <div class="source-row"><a href="https://aihot.virxact.com/items/cmsyuee7f000irobqbzybcq21" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>HaoAI Lab</span></div>
+          <h3>FastMetal 让 Mac 本地 30 秒生成视频</h3>
+          <p>FastMetal 推出可在 Mac 本地快速生成视频的技术，仅需 30 秒即可生成一段 5 秒 480P 视频，无需 CUDA 或云端支持，内存占用仅 3.9 GiB。该技术基于 Apple Silicon，采用 MLX 在 Metal 上运行 DiT、DMD 采样器和解码器，默认使用 INT8。提供三种模型：1.3B 支持 480P，5B 支持 720P，14B 追求更高画质。</p>
+          <div class="source-row"><a href="https://aihot.virxact.com/items/cmt0kxcuu07f2ro2owuqpbjc8" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>昆仑万维</span></div>
+          <h3>昆仑万维发布Mureka V9.5:AI音乐告别“机械堆砌”，转向“人情味”创作</h3>
+          <p>昆仑万维今日正式推出新一代AI音乐生成模型Mureka V9.5。该版本摒弃了行业追求高刺激的路线，转而强调“克制、留白与自然”，旨在解决AI音乐的“机械感”痛点。核心升级在于其自研的MusiCoT（音乐思维链）框架的深化，模型在生成前会先构建完整的音乐逻辑，使编配更自然、段落演进更贴合人类创作。内部评测显示，其人声表现良品率提升至61.0%，Prompt控制良品率达97.0%，尤其在中文国风领域实现了“脱胎换骨”的改进。此次升级源于超过2.5万份用户反馈，标志着Mureka正从“生成工具”进化为灵感催化剂和专业工作流的一环。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30430" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>韶音</span></div>
+          <h3>韶音首款AI开放式耳机OpenFit 2 AI重磅发布，深度接入千问大模型剑指高端商务</h3>
+          <p>韶音发布了其首款AI硬件产品OpenFit 2 AI，该产品深度接入了阿里巴巴千问大模型，并针对金融、法律等高专业门槛的商务语境进行了专项调优。OpenFit 2 AI搭载了先进的防漏音技术，支持8小时连续录音，支持49种语言转写、12类垂直行业专业词库、19种智能总结模板和30种语种翻译，同时获得网络安全等保三级认证和SOC2-Type1双重认证，成为高端商务的新一代生产力工具。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30491" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>网易有道</span></div>
+          <h3>网易有道Confucius4-TTS 迎来重要更新：补齐高性能推理与服务化能力，技术论文获海外社区关注</h3>
+          <p>网易有道技术团队近日对Confucius4-TTS进行了重要更新，新增vLLM推理后端，支持流式语音生成，并提供Web Demo与API接口，提升了模型的高性能推理与服务化能力。相关技术论文介绍了模型在跨语种零样本语音合成与音色克隆方面的技术方案，获得海外社区关注和高度评价。在中→英、英→中、中→韩、中→日4个跨语种方向的人工主观评测中，Confucius4-TTS表现优异，斩获多项第一。</p>
+          <div class="source-row"><a href="https://www.infoq.cn/article/A59yGpmHXR5BbokJAPk5" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>MiniMax</span></div>
+          <h3>视频生成迎来‘Claude Code时刻’，MiniMax Design ‘杀入’ Adobe、Canva 腹地</h3>
+          <p>文章探讨了AI视频生成从工具组合向端到端流水线演进的新趋势，指出当前多工具协同导致的效率瓶颈。随着营销内容需求激增（5倍以上）与交付时效压缩（如‘100条/天’），MiniMax Design以原生多模态模型为基础，重新组织商业视频生产流程，通过Agent驱动的工作流实现从需求到成片的完整链条。其差异化体现在以Agent为创作入口、视频原生多模态生产、Skill封装工作流以及开放适配能力，挑战Adobe和Canva在商业内容生产领域的主导地位。</p>
+          <div class="source-row"><a href="https://www.infoq.cn/article/7FAcAhVUw89VJNwuOwrc" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>腾讯</span></div>
+          <h3>微信密集上新：AI 入口增至 16 个，转账撤回也有新玩法</h3>
+          <p>微信近期正在灰度测试其原生AI助手“小微”的多项新功能，将AI入口总数扩展至16个。新功能覆盖了内容消费、社交互动、图片处理、聊天辅助等多个高频场景，例如公众号文章AI总结、朋友圈AI点评、聊天图片AI处理、拍照给AI识别追问等。同时，转账功能新增了向银行卡或手机号转账的选项，消息撤回后可在自己页面删除撤回提示。微信官方明确表示不会推出朋友圈二次编辑功能，但允许在删除刚发布的内容后使用“重新编辑”按钮快速修改重发。</p>
+          <div class="source-row"><a href="https://news.aibase.com/zh/news/30444" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="asr">
+          <div class="news-meta"><span>评测·数据</span><span>面壁智能 OpenBMB</span></div>
+          <h3>面壁智能 OpenBMB 推出 MathForm，面向 Lean 4 数学自动形式化的开源框架、数据集与模型</h3>
+          <p>面壁智能 OpenBMB 发布了 MathForm，一个面向 Lean 4 数学自动形式化的开源框架、数据集与模型。其 FormalVerse 数据集包含 367K+ 已验证示例，训练出的模型在 100K 预算下，Consistency Check 达到 60.32%，优于 FineLeanCorpus（46.53%）与 NuminaMath-LEAN（41.49%）。</p>
+          <div class="source-row"><a href="https://aihot.virxact.com/items/cmt2yscvm0ca8ro6t0u6vtfnt" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Hugging Face</span></div>
+          <h3>测量语音识别中的基准优化：Hugging Face 新测试揭示 ASR 模型“刷分”现象</h3>
+          <p>Hugging Face 最新研究通过三项测试量化了语音识别中的基准优化现象，评估了11个开源ASR模型。研究发现，多个高分系统会复现VoxPopuli和LibriSpeech基准的错误转录文本，即使音频内容与之矛盾。部分模型甚至依赖声学线索识别基准来源，导致其得分高估了真实转录能力。</p>
+          <div class="source-row"><a href="https://aihot.virxact.com/items/cmt30vskr0e0wro6t19q13yic" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>阿里</span></div>
+          <h3>CosyAgent：让声音成为服务的入口</h3>
+          <p>基于Qwen-Audio-3.0-Realtime模型，将全双工语音交互与企业业务能力融为一体。搭建只需三步——定义角色和目标、配置知识库和工具、选择音色和语言，无需写代码即可创建专属智能语音助手。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/GAKaJc4CrtOe_QoCp32BNA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>哔哩哔哩</span></div>
+          <h3>IndexTTS 2.5 让声音跨越语言</h3>
+          <p>B站自研IndexTTS 2.5，支持中/英/日/西/阿五国语言零样本配音，推理速度翻倍，跨语言情绪还原更自然，支持原声语速控制。收集约15万小时多语言语料及135小时情感语音。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/30e0qSPbdj06H_gap78Qqw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>Noiz AI</span></div>
+          <h3>终于！世界模型进入“有声时代”：24FPS画面+48kHz立体声实时生成</h3>
+          <p>Noiz AI联合多机构发布实时可交互音视频世界模型HelixWorld 1.0，支持24FPS实时生成画面，同时输出48kHz双声道音频，画面和声音由原生Transformer架构统一生成。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/nEtf3bwx2ct10viEqvKCuA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·行业</span><span>阶跃星辰</span></div>
+          <h3>北大联合阶跃星辰提出TensorCast：统一可编程管理大模型张量，推理「首字延迟」最高降低93.2%</h3>
+          <p>提出TensorCast统一张量管理抽象层，将模型权重、KV Cache等张量状态从具体系统中解耦。针对高并发多轮对话Agent场景，TTFT最高可降低93.2%。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/BYdiZO1e8UXkXTUbptxIBA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>HiDream.ai (智象未来)</span></div>
+          <h3>刚刚，HiDream-O1-World首秀登顶，原生全模态UiT架构打造「可交互时代」</h3>
+          <p>发布全球首款原生全模态交互式世界模型HiDream-O1-World，基于自研UiT架构。在美团LongCat与复旦联合推出的WBench评测中登顶Navi分榜，物理维度73.3分排名第一。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/EVlUTW_d3fvrSUVVclSTkg" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>阿里</span></div>
+          <h3>阿里发布AI音乐模型 HappyShrimp 1.0</h3>
+          <p>发布AI音乐模型HappyShrimp（快乐虾米），支持端到端整曲生成，从作词、作曲、编曲到演唱一体成型。能精准理解自然语言，将情绪、故事或记忆转化为完整歌曲。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/YYchMTBKPG9_Q3Ebvk-NyQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>小红书</span></div>
+          <h3>FireRedTTS3 开源：支持 24 种语言、21 种中文方言，统一 Voice Design 与语音编辑</h3>
+          <p>开源多语言TTS模型FireRedTTS3，Base版支持24种语言和21种中文方言的Zero-shot Voice Cloning；Instruct版支持自然语言Voice Design及语音内容、语速、音高、音量编辑。Apache-2.0协议。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/j-X-c5NwRnsquPGLduiCeg" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>Soniox</span></div>
+          <h3>Soniox TTS v2 为其多语言语音 AI 平台添加了表现力控制和语音克隆功能</h3>
+          <p>发布TTS v2，新增可编程表达性语音、集成语音克隆、多语言切换、字符级时间戳和低延迟流式传输。引入Audio Tags标签控制低语、笑声、犹豫、兴奋等表达方式。
+标签控制：经体验仅笑声类效果尚可，其他一般或不支持。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/98DpU2nS9EVkXvwSbpH8YA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>MiniCPM-o Team / OpenBMB</span></div>
+          <h3>MiniCPM-o 4.5：9B 全双工模型与 TML Interaction Models 的方法对照</h3>
+          <p>约9.34B参数的dense全双工模型，采用SigLIP、Whisper Medium和Qwen3-8B组件，2026年2月3日已开源。主干按文本速度每秒解码3-4步，声学生成由小模型处理。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/LivTfkCFZyxMe1Pol9HhEw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>西工大 ASLP等</span></div>
+          <h3>多方言ASR自蒸馏：学会方言，不忘普通话</h3>
+          <p>基于Qwen3-ASR-1.7B采用CPT→SFT→OPSD三阶段训练，在提升方言识别能力的同时不降低普通话识别准确率。OPSD让模型基于自己实际生成的识别结果继续学习，使训练状态更接近真实推理。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/S4onhqUAhuKC5Ljzu4endQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>阿里</span></div>
+          <h3>Qwen-Audio-3.0系列语音模型上线千问AI平台</h3>
+          <p>Qwen-Audio-3.0系列（ASR、TTS、Realtime）正式上线，在Artificial Analysis 7月语音排行榜上斩获ASR、实时交互、TTS三个赛道全球第一。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/VuMDdxRQCSiSHrhcOl9G-A" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>UT Austin / Reve</span></div>
+          <h3>UTAustin&Reve开源Qwen-Video-Edit：「图像 DiT 直改」视频编辑，改视频无需训练视频模型</h3>
+          <p>开源Qwen-Video-Edit，让20B图像编辑DiT直接处理视频VAE潜码，无需训练视频编辑骨干。仅用2个warm-start的3D卷积桥接，在Ditto-1M上微调。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/J5ZkLXTPV5iZRRPwU2VxyQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>阿里</span></div>
+          <h3>CosyCreative：可编辑的 AI 声音创作室</h3>
+          <p>定位一站式音频内容创作平台，内置上千种音色，支持声音复刻、AI播客、AI有声书、链接听文章等场景。文本与音频可同步编辑，支持自动标签、多轨混音和背景音乐。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/OXLppTU2M4sdH00hpWQILA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>阿里</span></div>
+          <h3>Qwen-Audio-3.0系列语音模型正式上线千问AI平台</h3>
+          <p>Qwen-Audio-3.0系列（ASR、TTS、Realtime）正式上线千问AI平台和阿里云百炼平台，在Artificial Analysis 7月语音排行榜上斩获三个赛道全球第一。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/m5ZGpH-jUTaje8ZNAoKf3w" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>Suno</span></div>
+          <h3>Suno Studio 2.0 正式发布：AI音乐制作迈向更完整的DAW工作流</h3>
+          <p>正式发布Suno Studio 2.0，新增MIDI支持、聊天栏（Beta）、高级分轨、音频效果与自定义插件、自动化等功能。Premier订阅用户可无限制导出32-bit/48kHz高品质多轨和Stem。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/lCVLR3ZbBLAvMLwyLZXlyw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·行业</span><span>腾讯</span></div>
+          <h3>从流量风口到价值高地，AI爆发下的微短剧发展六大趋势｜3万字报告下载</h3>
+          <p>报告指出微短剧正从“流量叙事”向“价值升维”重构。截至2026年Q1，全平台微短剧总产量12.8万部，AI生成占95%，但仅贡献约4%播放流量。AI短剧爆款率0.12%-0.47%，真人短剧1.5%-3%。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/7cduxxlPmeikP-xNjkACRQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>昆仑万维</span></div>
+          <h3>Mureka V9.5 重磅上线：让 AI 音乐，终于有了“活人味儿”</h3>
+          <p>发布AI音乐生成模型Mureka V9.5，基于MusiCoT（音乐思维链）框架。人声表现良品率跃升至61.0%，控制良品率97.0%，曲风完全体现比例95.7%。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/YSm_YXYMXvQ6gbDwwHePww" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>阿里</span></div>
+          <h3>人人都能写出好听的歌，AI音乐模型HappyShrimp 1.0上线</h3>
+          <p>发布AI音乐模型HappyShrimp 1.0，支持端到端整曲生成，从作词、作曲、编曲到演唱一体成型。能精准理解自然语言，将情绪、故事或记忆转化为完整歌曲。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/BMumq96ukJvG-3rs7KDQhw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·行业</span><span>DeepSeek</span></div>
+          <h3>昨夜，DeepSeek Harness首发新版本：14项更新，多模态能力拉满！</h3>
+          <p>DeepSeek Harness v0.1.0-rc.8上线，共14项调整。新增原生图片请求和图文混合输入，支持把Claude Code和Codex作为Profile Bundle按需安装，Windows终端加入持久PowerShell会话。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/6wIa4CqvRmPV6oUkasNv9Q" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·行业</span><span>Unsloth AI</span></div>
+          <h3>刚刚，Qwen3.8-27B超量化版开源，8G内存就能跑！</h3>
+          <p>Unsloth AI对Qwen3.8-27B进行超量化，放出1-bit极致量化版本，8G内存即可运行，仍保留77%准确率。使用Unsloth Dynamic 3.0技术。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/9fbkILC9HAtEQODIfMfdwQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·行业</span><span>字节跳动</span></div>
+          <h3>Github每日最佳！字节这个开源给AI加上超强记忆，Token成本暴跌90%</h3>
+          <p>字节跳动开源OpenViking（超29K Star），提供统一文件系统管理上下文、三层分级加载（L0摘要/L1概览/L2原文）、目录递归检索等功能。Token消耗下降34%-91%，查询延迟降低58%-66%。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/A0ipGqCeo7-hGB9hX7IPzA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Superwhisper</span></div>
+          <h3>Superwhisper 开源 S1-mini 0.6B：语音转写清洗器，94.8% 准确率 CPU 可跑</h3>
+          <p>开源S1-mini（0.6B参数），专门处理ASR转录后的文本归一化：去掉填充词、理顺口误、补标点和大写、口语数字转书面写法。在7,519个英语用例上达到94.8% token准确率，量化后仅462 MiB。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/Ynq757w8CUWSeGLGcoGikg" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>面壁智能 / 颜鑫</span></div>
+          <h3>火种说｜从“能听能看”到“共情响应”：一个算法工程师的全双工机器人探索</h3>
+          <p>算法工程师颜鑫使用本地部署的MiniCPM-o 4.5（INT4量化后内存占用11GB），打造了全双工桌面陪伴机器人YRobot，能在对话重叠区捕捉情绪。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/8pZUlvvhBve3G9CBNt_Q3Q" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>OpenMOSS</span></div>
+          <h3>MOSS-VL-Realtime 实时视觉交互架构与完整训练方案</h3>
+          <p>OpenMOSS 发布 MOSS-VL 技术报告，系统披露 MOSS-VL-Realtime 如何实现「边看边说」的实时视觉交互，包括模型架构、训练流程、实时推理系统以及流式评测结果。其核心思路不是等视频看完再回答，而是在生成回答的同时持续接收新画面，并根据场景变化决定继续说、保持沉默或修正正在生成的回答。
+https://arxiv.org/abs/2608.15045 
+新画面到来时无需重新处理此前视频： MOSS-VL 将视觉信息与语言生成解耦，新的视频帧只需编码一次并加入视觉缓存，语言模型可以在保持当前生成状态的同时读取最新画面，从而实现「边看边...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/gzDZphyYyPGY6tiHdxorKw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Elevenlabs</span></div>
+          <h3>ElevenLabs 发布实时语音模型 Eleven v3 Conversational：加入语音表现标签控制，支持 70+ 种语言</h3>
+          <p>ElevenLabs 宣布实时语音模型 Eleven v3 Conversational 正式开放使用。相比此前版本，这一模型专门针对实时对话场景优化，在流式生成中保持稳定语音质量，并加入更细粒度的情绪与表达控制，可直接用于 Voice Agent 等实时语音应用。
+
+新增更细粒度的情绪与表达控制： 开发者可通过 Audio Tags 控制笑声、同情、生气、兴奋等不同表达方式，让实时生成语音不只控制内容，还能控制说话状态与情绪。
+针对实时流式生成进行优化： Eleven v3 Conversational 专门面向实时语音场景设计，在连续流式生成过程中能...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/gzDZphyYyPGY6tiHdxorKw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>Audio8</span></div>
+          <h3>Audio8 开源多语言 TTS 模型 Audio8 TTS Preview 0.1B：约 1.7 亿参数支持零样本声音克隆</h3>
+          <p>Audio8 开源小型多语言 TTS 模型 Audio8 TTS Preview 0.1B，将零样本声音克隆和多语言语音合成压缩到约 1.7 亿参数的主模型中。相比当前大量十亿级参数 TTS 模型，它重点探索在显著缩小模型体积后，仍保留可用的声音克隆与语音生成能力。
+
+约 1.7 亿参数支持零样本声音克隆： 用户提供一段参考音频及对应文本后，即可让模型复刻该声音生成新的语音；独立的音频解码器约 1.2 亿参数。
+支持 8 种语言： 中文和英文是主要支持语言，同时提供德语、西班牙语、法语、意大利语、日语和韩语的实验性支持。
+采用快慢双分支自回归架构： 模型...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/gzDZphyYyPGY6tiHdxorKw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="asr">
+          <div class="news-meta"><span>评测·数据</span><span>Speko</span></div>
+          <h3>YC S26 创业公司 Speko 推出 Voice Agent 模型路由平台：持续评测 STT、LLM 与 TTS，自动重选更优模型组合</h3>
+          <p>YC S26 创业公司 Speko 推出面向 Voice Agent 的模型路由平台，希望解决语音模型更新太快、开发者需要反复手动选型的问题。Speko 持续按语言和使用场景评测不同 STT、LLM 与 TTS，并将评测结果直接用于实际流量路由，让开发者通过一个 API 接入不同供应商，并随着模型表现变化更新所使用的模型组合。 
+把模型评测直接变成 Voice Agent 路由策略： Speko 持续测试不同模型的识别错误率、延迟、自然度和成本等指标；当新模型发布或排名变化后，后续会话可以自动使用新的更优模型，不需要开发者重新修改集成。
+统一路由 STT...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/gzDZphyYyPGY6tiHdxorKw" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>智象未来 / 西工大 ASLP</span></div>
+          <h3>西工大 ASLP 开源中文多方言 ASR 模型</h3>
+          <p>西工大ASLP联合WeNet发布CN-MultiDialect-ASR，基于Qwen3-ASR-1.7B引入OPSD自蒸馏训练。5个公开方言测试集平均CER从15.37%降至12.79%，8个普通话测试集平均CER从3.46%降至3.27%。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/df_flQnt1WjU1gWORIBZFA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="model">
+          <div class="news-meta"><span>模型·行业</span><span>OpenMOSS</span></div>
+          <h3>OpenMOSS 开源 MOSS-VL-11B 实时视频模型：看视频、做监控、当解说员，「边看边答还会改口」4090 就能本地跑</h3>
+          <p>开源 11.3B 参数的实时视频理解模型 MOSS-VL（Apache 2.0 协议），支持图像、视频、长文档统一理解，256K 上下文窗口。核心创新在于将“实时流式视频理解”做成了可本地运行的开放权重。量化版可在 RTX 4090（24GB 显存）上本地运行。在 OVO-Bench 等 4 个流式视频理解开源基准中取得 3 个第一、1 个第二。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/mGykH_mqG9u0yOH9f0F3hQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>Cartesia</span></div>
+          <h3>Cartesia 发布 TTS 模型 Sonic-3.6：支持 44 种语言，重点提升跨语言翻译与语音自然度，Artificial Analysis 榜单排名第一</h3>
+          <p>Cartesia 发布 Sonic-3.6 TTS 模型，重点提升 44 种语言下的语音自然度，并称这是其目前最逼真的 TTS 版本。相比三个月前发布的 Sonic-3.5，新版本根据开发团队反馈进行了底层模型改进，并在 Artificial Analysis 的 Provider Voice Streaming 和 Controlled Voice Streaming 两项榜单中均排名第一。此外，在 Voice of India 的印地语 General TTS 榜单中，上一代 Sonic-3.5 当前排名第 3，Bradley-Terry Elo 为...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/NC3wRQ5ZrndCWP-ATO8RKQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Giga</span></div>
+          <h3>Giga 为 Voice Agent 平台推出实时合成语音检测：通话过程中识别 AI 生成语音，可触发二次验证</h3>
+          <p>Giga 在其语音智能体平台上线实时合成语音检测能力，可在客服通话进行过程中持续分析来电者音频，并判断对方是否为 AI 生成语音。该能力直接运行在现有语音平台内，无需上传完整录音或额外搭建检测链路，检测结果可用于触发加强身份验证、人工接管、敏感操作限制或欺诈分析。
+
+实时流式检测，无需等待完整录音结束：系统持续分析来电音频流，并在对话进行过程中输出合成语音判断结果，使检测能够在用户仍在说话时完成。
+针对电话网络条件专门训练：模型面向窄带电话音频、压缩编码、背景噪声和短语音片段优化，而不是只在高采样率、干净录音条件下运行。
+强调跨模型泛化，而非识别特定 T...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/NC3wRQ5ZrndCWP-ATO8RKQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Wippi</span></div>
+          <h3>印度儿童科技初创公司 Wippi 完成 120 万美元种子轮融资：无屏 AI 语音设备支持儿童与故事角色双向对话</h3>
+          <p>印度儿童科技初创公司 Wippi 完成 120 万美元种子轮融资，由 12 Flags 领投，Warmup Ventures、Ventana Ventures 和 Ruvento Ventures 跟投。公司面向 4–8 岁儿童开发无屏 AI 语音陪伴设备，让孩子通过语音与故事角色对话、提问并参与剧情走向。
+
+
+
+支持双向互动式故事： Wippi 不仅播放预设内容，儿童还可以在故事过程中提出问题、做出选择，并通过语音影响后续情节。
+采用儿童语音 AI + 无屏硬件： 产品通过专有硬件和面向儿童场景的语音 AI 实现对话交互，减少对屏幕界面的依赖。
+实体设...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/NC3wRQ5ZrndCWP-ATO8RKQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Avera Labs</span></div>
+          <h3>Avera Labs 开源全双工语音训练数据管线 ConversationalVoice：把真实录音转成说话人分离的高质量对话数据</h3>
+          <p>Avera Labs 发布首项研究工作 ConversationalVoice，针对全双工语音模型缺少高质量真实对话训练数据的问题，将播客、视频等真实录音中的多人语音分离并重新整理为结构化训练数据。相比只保留转录文本，这套管线重点保留对话中的轮次、停顿、重叠说话和非语言表达，让模型能够学习更接近真实人类交流的互动方式。
+
+从混杂录音中提取干净的双人对话： 系统先找到两人交流片段，再完成说话人识别、语音分离和一致性检查，将原本混有背景音乐、环境噪声和多人声音的录音拆成时间对齐的独立音轨。
+保留全双工对话最重要的时间关系： 处理后的数据不仅包含「谁说了什么」...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/_OWoHILcPGULoe89VBKXUA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>快手</span></div>
+          <h3>快手 Kling、港中文与清华提出统一音频生成模型 SonicWeave：一个模型生成语音、音乐、歌声与音效，复杂场景 MOS-R 达 4.49</h3>
+          <p>快手 Kling 团队联合香港中文大学、清华大学提出统一音频生成模型 SonicWeave，用一套模型参数同时生成语音、歌声、音乐、音效，以及多种声音交织的复杂音频场景。相比为不同声音类型分别训练模型，SonicWeave 重点解决同一段音频中语音、音乐和环境声不断变化、相互重叠时，模型该如何动态分配生成能力的问题。
+
+一个模型覆盖多类音频生成： SonicWeave 统一支持 TTS、文本生成音效、文本生成音乐、歌声以及它们的细粒度混合，例如同时生成人物对话、背景音乐、环境声和现场音效。
+以连续音频片段为单位动态选择不同专家： 核心 CPE-MoE 不...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/_OWoHILcPGULoe89VBKXUA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="asr">
+          <div class="news-meta"><span>评测·数据</span><span>Patronus AI</span></div>
+          <h3>Patronus AI 开源设计类 computer-use 数据集 FigmaTrace：记录 200+ 小时真实设计过程，而不只保留最终作品，让模型学习设计过程而不只看成品</h3>
+          <p>Patronus AI 开源 FigmaTrace，面向设计类 computer-use Agent 的训练与评测，包含 3,469 条 Figma 操作轨迹、超过 200 小时真实设计工作，覆盖 10 类设计技能。与过去从最终设计稿反推操作过程不同，FigmaTrace 直接记录设计师如何一步步完成长链路任务，让模型学习元素选择、坐标定位以及不同设计阶段中的实际决策过程。 
+记录完整设计过程，而不是只收集最终作品： 数据覆盖无障碍修复、模板调整、原型连接、草图转 Figma、跨平台适配等任务，重点保留人类设计师完成任务时的操作顺序和决策轨迹。
+长设计录...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/_OWoHILcPGULoe89VBKXUA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>X2-Turn</span></div>
+          <h3>自变量机器人开源实时语音轮次模型 X2-Turn：每 80ms 同步输出转写与轮次状态，判断用户是否说完或只是在附和</h3>
+          <p>自变量机器人 X-Square Robot 开源 X2-Turn，在同一个 4B 流式语音模型中同时完成 ASR 和对话轮次判断。不同于先做 VAD、再转写、最后判断用户是否说完的串联方案，X2-Turn 基于 Voxtral Realtime 增加并行的轮次状态预测模块，每 80ms 随语音流同步更新转写和状态，用于更早判断用户还在继续说、已经说完，还是只发出了 「嗯」「啊」这类附和声。 
+ASR 和轮次判断在一次流式推理中完成： 两项任务共享同一份实时语音表示，同时输出转写和轮次状态，不需要额外再运行一个 ASR 或轮次判断模型，减少串联系统带来的等...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/_OWoHILcPGULoe89VBKXUA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="interaction">
+          <div class="news-meta"><span>语音交互</span><span>Hugging Face</span></div>
+          <h3>Hugging Face 推出 Realtime Voice 实时语音 Demo：四个开放模型组成级联式 Voice Agent</h3>
+          <p>Hugging Face 上线 Realtime Voice 实时语音 Demo，基于其开源 speech-to-speech 框架构建，并非端到端语音模型，而是采用 VAD → 语音识别 → 视觉语言模型 → 语音合成 的级联架构。当前在线 Demo 分别使用 Silero VAD、NVIDIA Parakeet TDT 1.1B、Gemma 4 31B 和 Qwen3-TTS 1.7B，各环节均可替换或本地运行；前端通过 WebSocket 与实时后端通信，并兼容 OpenAI Realtime API 的核心事件协议。https://hugging...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/_OWoHILcPGULoe89VBKXUA" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>Cartesia</span></div>
+          <h3>Cartesia 发布 TTS 模型 Sonic-3.6：支持 44 种语言，重点提升跨语言翻译与语音自然度</h3>
+          <p>发布 Sonic-3.6 TTS 模型，支持 44 种语言，重点提升跨语言翻译与语音自然度。在 Artificial Analysis 的 Provider Voice Streaming 和 Controlled Voice Streaming 两项榜单中均排名第一。支持自然停顿、填充词、笑声与情绪表达；支持 40+ 语言跨语言混读，无需标注；生成速度每秒 136.1 字符，实时流式首包延迟 90ms 以内。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/Wx0WgCFDySN2FtqfmHWXaQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>小红书 FireRedTeam</span></div>
+          <h3>FireRedTTS3 开源：支持 24 种语言、21 种中文方言，统一 Voice Design 与语音编辑</h3>
+          <p>开源 FireRedTTS3，Base 版支持 24 种语言、21 种中文方言的 Zero-shot Voice Cloning；Instruct 版支持自然语言 Voice Design 及语音内容、语速、音高和音量编辑。在 Seed-TTS-Eval 上平均 WER/CER 为 3.04%，24 语种评测平均 Speaker Similarity 为 84.8。采用 Apache-2.0 协议。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/j-X-c5NwRnsquPGLduiCeg" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>Deepgram</span></div>
+          <h3>Deepgram 推出 Flux TTS：跨轮次保留对话上下文，原生支持打断与流式 LLM 输入</h3>
+          <p>Deepgram推出专为实时语音代理设计的Flux TTS模型。核心亮点：①跨轮次保留对话上下文，持续保存对话状态，根据上下文调整语速、重音和情绪表达；②WebSocket API原生处理用户打断（Barge-in），返回用户实际已听到的text_spoken和尚未播放的内容；③支持LLM Token直接流入TTS，服务端自动决定flush边界；④同时提供WebSocket实时生成和REST Batch API两种调用方式；⑤官方盲测自然度Win Rate为73.4%，表达力Win Rate为77.5%。首批支持英语声音，支持Cloud、VPC和On-p...</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/IozueAWBWfZSSdOst6ILAQ" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="audio">
+          <div class="news-meta"><span>音频·音乐</span><span>VUI Labs 宇生月伴</span></div>
+          <h3>Luna-TTS 登顶 Hugging Face TTS Arena，并在 Artificial Analysis 超越谷歌！</h3>
+          <p>Luna-TTS 在 Hugging Face TTS Arena 中以 1574 Elo 评分登顶总榜第一，并在 Artificial Analysis 的 Provider Voice TTS 榜单中位列全球第三（Elo 1,215），超越 Google Gemini 等主流模型。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/npCFYaCNB2osby8eSN7q4g" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+        <article class="news-card" data-category="video">
+          <div class="news-meta"><span>视频生成</span><span>Lightricks</span></div>
+          <h3>Lightricks 开源 LTX-2.5 22B 音视频模型：视频对白同步生成，比 Wan 2.2 快 18 倍</h3>
+          <p>开源 22B 参数的双流 DiT 音视频联合生成模型 LTX-2.5，支持文本、图像、视频输入，输出同步的音频和视频。视频流与音频流通过双向交叉注意力对齐，官方评测显示比 Wan 2.2-14B 快约 18 倍，单次生成最长 20 秒。采用 Gemma4-12B 微调版文本编码器，蒸馏版固定 8 步采样即可出片。</p>
+          <div class="source-row"><a href="https://mp.weixin.qq.com/s/GfPYiFkeZU2nREORE495dg" target="_blank" rel="noopener">来源链接</a></div>
+        </article>
+      </div></section>
+    <section class="section" id="next"><div class="section-head"><div class="eyebrow">05 / 下周关注</div><div><h2>持续关注方向。</h2><p class="sub">后续重点观察模型开放、评测复现和商业工作流的进一步变化。</p></div></div><div class="grid three">
+        <article class="card compact"><span class="tag">观察 1</span><h3>全双工语音数据与真实任务评测</h3><p class="sub">关注 DuplexGen、DuplexWorld、Lychee-FD、JoyAI-Talker 和真实电话延迟榜是否开放更多数据、代码、在线服务与可复现基线。</p></article>
+        <article class="card compact"><span class="tag amber">观察 2</span><h3>连续语音与统一音频生成的部署表现</h3><p class="sub">关注 IndexTTS-2.5、dots.tts、MiDashengLM-Gen、SwanTale、MiniMax Music 3.0 在首包延迟、长时稳定性、多语种和商用许可上的后续进展。</p></article>
+        <article class="card compact"><span class="tag blue">观察 3</span><h3>视频模型的实时性与世界交互能力</h3><p class="sub">关注 LTX-2.5、Wan-Animate-2、Seedance 2.5、HiDream-O1-World、Cosmos 3 Edge 与 Sekai2 在实时推理、角色一致性和交互式生成上的落地。</p></article>
+      </div></section>
+    <footer class="footer"><p>本周报覆盖 2026.08.17 - 2026.08.23 行业重点资讯，共 57 条。数据来源见各卡片「来源链接」。</p><p style="margin-top: 12px; color: var(--muted); font-size: 14px;">音视频生成资源部・音视频之家 | 编辑：陈然</p></footer>
+    <section style="margin-top: 48px; text-align: center;"><a href="http://172.31.101.179:6001/" target="_blank" rel="noopener" style="display: inline-block; border: none;"><img src="promo-banner.png" alt="音视频之家" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 8px 24px rgba(24, 32, 31, 0.08);"></a></section>
+  </main><script>
+    const quickNav=document.querySelector(".quick-nav"); const quickNavToggle=document.querySelector(".quick-nav-toggle"); if(quickNav&&quickNavToggle){const setQuickNav=(expanded)=>{quickNav.classList.toggle("collapsed",!expanded);quickNavToggle.setAttribute("aria-expanded",String(expanded));};window.setTimeout(()=>setQuickNav(false),4200);quickNavToggle.addEventListener("click",(event)=>{event.stopPropagation();setQuickNav(quickNav.classList.contains("collapsed"));});quickNav.addEventListener("click",()=>{if(quickNav.classList.contains("collapsed"))setQuickNav(true);});quickNav.querySelectorAll("a").forEach((link)=>{link.addEventListener("click",()=>window.setTimeout(()=>setQuickNav(false),280));});}
+    const filterButtons=Array.from(document.querySelectorAll(".filter-button")); const newsCards=Array.from(document.querySelectorAll(".news-card")); filterButtons.forEach((button)=>{button.addEventListener("click",()=>{const filter=button.dataset.filter;filterButtons.forEach((item)=>item.classList.toggle("active",item===button));newsCards.forEach((card)=>{const visible=filter==="all"||card.dataset.category===filter;card.classList.toggle("hidden",!visible);});});});
+  </script></body></html>
